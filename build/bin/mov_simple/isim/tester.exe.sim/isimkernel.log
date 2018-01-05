@@ -1,0 +1,30 @@
+Command line:
+   tester.exe
+     -intstyle  ise
+     -simmode  tcl
+     -simrunnum  0
+     -socket  64258
+
+Fri Jan 05 13:15:19 2018
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 1470.62 Meg
+
+ Total Signals          : 376
+ Total Nets             : 1363
+ Total Signal Drivers   : 153
+ Total Blocks           : 28
+ Total Primitive Blocks : 24
+ Total Processes        : 185
+ Total Traceable Variables  : 170
+ Total Scalar Nets and Variables : 36972
+Total Line Count : 1451
+
+ Total Simulation Time: 0.078125 sec
+
+ Current Memory Usage: 1470.62 Meg
+
+Fri Jan 05 13:15:20 2018
+

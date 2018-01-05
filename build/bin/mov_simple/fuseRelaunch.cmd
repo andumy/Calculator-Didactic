@@ -1,0 +1,1 @@
+-incremental "test.test_mov_simple" -L "unisims_ver" -L "unimacro_ver" -L "xilinxcorelib_ver" -L "tester=..\..\lib\tester" -L "test=..\..\lib\tests\mov_simple" -L "reference=..\..\lib\reference" -L "uut=..\..\lib\uut" -o "tester.exe" 

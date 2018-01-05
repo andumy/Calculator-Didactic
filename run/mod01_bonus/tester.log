@@ -1,0 +1,19 @@
+********************************************************************************
+**** Running test mod01_bonus...
+********************************************************************************
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+--------------------------------------------------------------------------------
+instr count: 1, instr addr: 0000, instr: 0304 done in 8 cycles
+	CPs diverged: found 0001, expected 0002
+		at instr count: 1, instr addr: 0000, instr: 0304
+	reg 0 differs, found: 0001, expected: 0000
+		at instr count: 1, instr addr: 0000, instr: 0304
+--------------------------------------------------------------------------------
+Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

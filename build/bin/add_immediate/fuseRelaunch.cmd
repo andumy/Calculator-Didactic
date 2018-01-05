@@ -1,0 +1,1 @@
+-incremental "test.test_add_immediate" -L "unisims_ver" -L "unimacro_ver" -L "xilinxcorelib_ver" -L "tester=..\..\lib\tester" -L "test=..\..\lib\tests\add_immediate" -L "reference=..\..\lib\reference" -L "uut=..\..\lib\uut" -o "tester.exe" 

@@ -1,0 +1,36 @@
+ISim log file
+Running: tester.exe -intstyle ise -tclbatch ..\..\..\scripts\console.tcl 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 10 ms
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+--------------------------------------------------------------------------------
+instr count: 1, instr addr: 0000, instr: 033a done in 9 cycles
+instr count: 2, instr addr: 0001, instr: 933a done in 9 cycles
+instr count: 3, instr addr: 0002, instr: 4b3a done in 9 cycles
+instr count: 4, instr addr: 0003, instr: db3a done in 9 cycles
+instr count: 5, instr addr: 0004, instr: 273a done in 9 cycles
+instr count: 6, instr addr: 0005, instr: b73a done in 9 cycles
+instr count: 7, instr addr: 0006, instr: 6f3a done in 9 cycles
+instr count: 8, instr addr: 0007, instr: ff3a done in 9 cycles
+instr count: 9, instr addr: 0008, instr: 2348 done in 8 cycles
+instr count: 10, instr addr: 0009, instr: a348 done in 17 cycles
+instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
+instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
+instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
+instr count: 14, instr addr: 000f, instr: 0304 done in 8 cycles
+	CPs diverged: found 0010, expected 0011
+		at instr count: 14, instr addr: 000f, instr: 0304
+	INDs differ: found (), expected (PSC)
+		at instr count: 14, instr addr: 000f, instr: 0304
+	reg 0 differs, found: 0001, expected: ffff
+		at instr count: 14, instr addr: 000f, instr: 0304
+--------------------------------------------------------------------------------
+Stopped at time : 157305 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

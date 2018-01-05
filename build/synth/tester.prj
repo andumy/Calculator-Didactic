@@ -1,0 +1,7 @@
+verilog work "..\..\calc_didactic\alu.v"
+verilog work "..\..\calc_didactic\bus.v"
+verilog work "..\..\calc_didactic\calc_didactic.v"
+verilog work "..\..\calc_didactic\register.v"
+verilog work "..\..\calc_didactic\registers.v"
+verilog work "..\..\calc_didactic\uc.v"
+verilog work "..\..\tester\ram.v.synth"
