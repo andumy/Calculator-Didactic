@@ -39,9 +39,9 @@ instr count: 26, instr addr: 0021, instr: 2f0a done in 9 cycles
 instr count: 27, instr addr: 0022, instr: af0a done in 9 cycles
 instr count: 28, instr addr: 0023, instr: ef0a done in 9 cycles
 instr count: 29, instr addr: 0024, instr: 0350 done in 8 cycles
-	INDs differ: found (PC), expected ()
+	INDs differ: found (P), expected ()
 		at instr count: 29, instr addr: 0024, instr: 0350
-	reg 0 differs, found: 0012, expected: 0025
+	reg 0 differs, found: 0024, expected: 0025
 		at instr count: 29, instr addr: 0024, instr: 0350
 --------------------------------------------------------------------------------
 Stopped at time : 315085 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

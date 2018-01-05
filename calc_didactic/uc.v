@@ -220,10 +220,10 @@ always @(*) begin
         `decode: begin
             // decode location of operands and operation
             if(cop[1] == 1'b0) begin           // one operand instructions
-                decoded_d_next      = 0;
-                decoded_dst_next    = mod == 2'b11 ? `load_dst_reg : `load_dst_mem;
-                decoded_src_next    = decoded_dst_next;
-                decoded_exec_next   = `exec_1op;
+                decoded_d_next      = (cop[0:6] == 7'b0) ? d : 0;
+					 decoded_exec_next   = `exec_1op;
+                decoded_dst_next    = (cop[0:6] == 7'b0) ?  decoded_exec_next : (mod == 2'b11 ? `load_dst_reg : `load_dst_mem);
+                decoded_src_next    = (cop[0:6] == 7'b0) ? ( mod == 2'b11 ? `load_src_reg : `load_src_mem) : decoded_dst_next;
                 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
             end
             else if(cop[1] == 1'b1) begin       // two operand instructions
@@ -413,27 +413,40 @@ always @(*) begin
         end
 
         `exec_1op: begin
-            t1_oe = 1;
-            case(cop[4:6])
-                3'b000: begin                               // INC
-                    alu_carry = 1;
-                    alu_opcode = `ADC;
-                end
-                3'b001: begin                               // DEC
-                    alu_carry = 1;
-                    alu_opcode = `SBB1;
-                end
-                3'b010: begin                               // NEG
-                    alu_carry = 0;
-                    alu_opcode = `SBB2;
-                end
-                3'b011: begin                               // NOT
-                    alu_opcode = `NOT;
-                end
-                3'b100: alu_opcode = `SHL;                  // SHL/SAL
-                3'b101: alu_opcode = `SHR;                  // SHR
-                3'b110: alu_opcode = `SAR;                  // SAR
-            endcase
+            
+				if(cop[3] == 1) begin// operatii
+					t1_oe = 1;
+					case(cop[4:6])
+						 3'b000: begin                               // INC
+							  alu_carry = 1;
+							  alu_opcode = `ADC;
+						 end
+						 3'b001: begin                               // DEC
+							  alu_carry = 1;
+							  alu_opcode = `SBB1;
+						 end
+						 3'b010: begin                               // NEG
+							  alu_carry = 0;
+							  alu_opcode = `SBB2;
+						 end
+						 3'b011: begin                               // NOT
+							  alu_opcode = `NOT;
+						 end
+						 3'b100: alu_opcode = `SHL;                  // SHL/SAL
+						 3'b101: alu_opcode = `SHR;                  // SHR
+						 3'b110: alu_opcode = `SAR;                  // SAR
+					endcase
+				end
+				if(cop[3] == 0) begin // transfer/date de control
+					t1_oe = 0;
+					t2_oe = 1;
+					case(cop[4:6])
+						3'b000: begin												// MOV
+							alu_opcode = `OR;
+						end
+						
+					endcase
+				end
             alu_oe = 1;
             t1_we = 1;
             ind_sel = 1;

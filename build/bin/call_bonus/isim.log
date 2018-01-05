@@ -15,7 +15,9 @@ Finished circuit initialization process.
 instr count: 1, instr addr: 0000, instr: 2304 done in 8 cycles
 	CPs diverged: found 0001, expected 0002
 		at instr count: 1, instr addr: 0000, instr: 2304
-	reg 4 differs, found: 0001, expected: 000f
+	INDs differ: found (PZ), expected ()
+		at instr count: 1, instr addr: 0000, instr: 2304
+	reg 4 differs, found: 0000, expected: 000f
 		at instr count: 1, instr addr: 0000, instr: 2304
 --------------------------------------------------------------------------------
 Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

@@ -31,11 +31,9 @@ instr count: 16, instr addr: 0011, instr: 670a done in 9 cycles
 instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 19 cycles
 instr count: 19, instr addr: 0015, instr: 2180 done in 18 cycles
-	INDs differ: found (PZC), expected (PSC)
+	INDs differ: found (PS), expected (PSC)
 		at instr count: 19, instr addr: 0015, instr: 2180
 	reg 0 differs, found: 0003, expected: ffff
-		at instr count: 19, instr addr: 0015, instr: 2180
-	ram addr 000003ff differs, found: 0000, expected: ffff
 		at instr count: 19, instr addr: 0015, instr: 2180
 --------------------------------------------------------------------------------
 Stopped at time : 209825 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

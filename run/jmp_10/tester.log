@@ -26,9 +26,7 @@ instr count: 13, instr addr: 000d, instr: 670a done in 9 cycles
 instr count: 14, instr addr: 000e, instr: 770a done in 9 cycles
 instr count: 15, instr addr: 000f, instr: ef0a done in 19 cycles
 instr count: 16, instr addr: 0011, instr: 2150 done in 18 cycles
-	INDs differ: found (O), expected (P)
-		at instr count: 16, instr addr: 0011, instr: 2150
-	ram addr 00000013 differs, found: 50a8, expected: a150
+	ram addr 00000013 differs, found: 0011, expected: a150
 		at instr count: 16, instr addr: 0011, instr: 2150
 --------------------------------------------------------------------------------
 Stopped at time : 178275 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

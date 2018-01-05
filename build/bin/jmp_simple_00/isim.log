@@ -36,9 +36,9 @@ instr count: 21, instr addr: 0017, instr: a30a done in 9 cycles
 instr count: 22, instr addr: 0018, instr: 2050 done in 12 cycles
 	CPs diverged: found 0019, expected 001a
 		at instr count: 22, instr addr: 0018, instr: 2050
-	INDs differ: found (PO), expected ()
+	INDs differ: found (P), expected ()
 		at instr count: 22, instr addr: 0018, instr: 2050
-	ram addr 0000001a differs, found: 5028, expected: a050
+	ram addr 0000001a differs, found: 0018, expected: a050
 		at instr count: 22, instr addr: 0018, instr: 2050
 --------------------------------------------------------------------------------
 Stopped at time : 241165 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

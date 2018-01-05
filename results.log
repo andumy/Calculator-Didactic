@@ -99,7 +99,9 @@ Finished circuit initialization process.
 instr count: 1, instr addr: 0000, instr: 2304 done in 8 cycles
 	CPs diverged: found 0001, expected 0002
 		at instr count: 1, instr addr: 0000, instr: 2304
-	reg 4 differs, found: 0001, expected: 000f
+	INDs differ: found (PZ), expected ()
+		at instr count: 1, instr addr: 0000, instr: 2304
+	reg 4 differs, found: 0000, expected: 000f
 		at instr count: 1, instr addr: 0000, instr: 2304
 --------------------------------------------------------------------------------
 Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -244,9 +246,7 @@ instr count: 13, instr addr: 000d, instr: 670a done in 9 cycles
 instr count: 14, instr addr: 000e, instr: 770a done in 9 cycles
 instr count: 15, instr addr: 000f, instr: ef0a done in 19 cycles
 instr count: 16, instr addr: 0011, instr: 2150 done in 18 cycles
-	INDs differ: found (O), expected (P)
-		at instr count: 16, instr addr: 0011, instr: 2150
-	ram addr 00000013 differs, found: 50a8, expected: a150
+	ram addr 00000013 differs, found: 0011, expected: a150
 		at instr count: 16, instr addr: 0011, instr: 2150
 --------------------------------------------------------------------------------
 Stopped at time : 178275 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -286,9 +286,9 @@ instr count: 21, instr addr: 0017, instr: a30a done in 9 cycles
 instr count: 22, instr addr: 0018, instr: 2050 done in 12 cycles
 	CPs diverged: found 0019, expected 001a
 		at instr count: 22, instr addr: 0018, instr: 2050
-	INDs differ: found (PO), expected ()
+	INDs differ: found (P), expected ()
 		at instr count: 22, instr addr: 0018, instr: 2050
-	ram addr 0000001a differs, found: 5028, expected: a050
+	ram addr 0000001a differs, found: 0018, expected: a050
 		at instr count: 22, instr addr: 0018, instr: 2050
 --------------------------------------------------------------------------------
 Stopped at time : 241165 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -333,9 +333,9 @@ instr count: 26, instr addr: 0021, instr: 2f0a done in 9 cycles
 instr count: 27, instr addr: 0022, instr: af0a done in 9 cycles
 instr count: 28, instr addr: 0023, instr: ef0a done in 9 cycles
 instr count: 29, instr addr: 0024, instr: 0350 done in 8 cycles
-	INDs differ: found (PC), expected ()
+	INDs differ: found (P), expected ()
 		at instr count: 29, instr addr: 0024, instr: 0350
-	reg 0 differs, found: 0012, expected: 0025
+	reg 0 differs, found: 0024, expected: 0025
 		at instr count: 29, instr addr: 0024, instr: 0350
 --------------------------------------------------------------------------------
 Stopped at time : 315085 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -354,7 +354,7 @@ Finished circuit initialization process.
 instr count: 1, instr addr: 0000, instr: 0304 done in 8 cycles
 	CPs diverged: found 0001, expected 0002
 		at instr count: 1, instr addr: 0000, instr: 0304
-	reg 0 differs, found: 0001, expected: 0000
+	INDs differ: found (PZ), expected ()
 		at instr count: 1, instr addr: 0000, instr: 0304
 --------------------------------------------------------------------------------
 Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -389,11 +389,9 @@ instr count: 16, instr addr: 0011, instr: 670a done in 9 cycles
 instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 19 cycles
 instr count: 19, instr addr: 0015, instr: 2180 done in 18 cycles
-	INDs differ: found (PZC), expected (PSC)
+	INDs differ: found (PS), expected (PSC)
 		at instr count: 19, instr addr: 0015, instr: 2180
 	reg 0 differs, found: 0003, expected: ffff
-		at instr count: 19, instr addr: 0015, instr: 2180
-	ram addr 000003ff differs, found: 0000, expected: ffff
 		at instr count: 19, instr addr: 0015, instr: 2180
 --------------------------------------------------------------------------------
 Stopped at time : 209825 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -425,9 +423,9 @@ instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
 instr count: 14, instr addr: 000f, instr: 0304 done in 8 cycles
 	CPs diverged: found 0010, expected 0011
 		at instr count: 14, instr addr: 000f, instr: 0304
-	INDs differ: found (), expected (PSC)
+	INDs differ: found (S), expected (PSC)
 		at instr count: 14, instr addr: 000f, instr: 0304
-	reg 0 differs, found: 0001, expected: ffff
+	reg 0 differs, found: fffd, expected: ffff
 		at instr count: 14, instr addr: 000f, instr: 0304
 --------------------------------------------------------------------------------
 Stopped at time : 157305 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -462,9 +460,7 @@ instr count: 16, instr addr: 0011, instr: 670a done in 9 cycles
 instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 9 cycles
 instr count: 19, instr addr: 0014, instr: 9b00 done in 8 cycles
-	INDs differ: found (P), expected (S)
-		at instr count: 19, instr addr: 0014, instr: 9b00
-	reg 1 differs, found: 0003, expected: 0000
+	INDs differ: found (PZ), expected (S)
 		at instr count: 19, instr addr: 0014, instr: 9b00
 --------------------------------------------------------------------------------
 Stopped at time : 209625 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -484,7 +480,7 @@ instr count: 1, instr addr: 0000, instr: 033a done in 9 cycles
 instr count: 2, instr addr: 0001, instr: 8304 done in 8 cycles
 	CPs diverged: found 0002, expected 0003
 		at instr count: 2, instr addr: 0001, instr: 8304
-	INDs differ: found (), expected (PZ)
+	reg 1 differs, found: 0000, expected: 0001
 		at instr count: 2, instr addr: 0001, instr: 8304
 --------------------------------------------------------------------------------
 Stopped at time : 31405 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -514,11 +510,11 @@ instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
 instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
 instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
 instr count: 14, instr addr: 000f, instr: 2120 done in 18 cycles
-	INDs differ: found (C), expected (PSC)
+	INDs differ: found (PZ), expected (PSC)
 		at instr count: 14, instr addr: 000f, instr: 2120
 	reg 3 differs, found: 0000, expected: ffff
 		at instr count: 14, instr addr: 000f, instr: 2120
-	ram addr 000003ff differs, found: 0001, expected: ffff
+	ram addr 000003ff differs, found: 0000, expected: ffff
 		at instr count: 14, instr addr: 000f, instr: 2120
 --------------------------------------------------------------------------------
 Stopped at time : 157365 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
@@ -548,11 +544,11 @@ instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
 instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
 instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
 instr count: 14, instr addr: 000f, instr: 2320 done in 8 cycles
-	INDs differ: found (C), expected (PSC)
+	INDs differ: found (S), expected (PSC)
 		at instr count: 14, instr addr: 000f, instr: 2320
 	reg 3 differs, found: 0000, expected: ffff
 		at instr count: 14, instr addr: 000f, instr: 2320
-	reg 4 differs, found: 0001, expected: ffff
+	reg 4 differs, found: fffd, expected: ffff
 		at instr count: 14, instr addr: 000f, instr: 2320
 --------------------------------------------------------------------------------
 Stopped at time : 157295 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

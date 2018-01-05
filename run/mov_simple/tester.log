@@ -29,9 +29,7 @@ instr count: 16, instr addr: 0011, instr: 670a done in 9 cycles
 instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 9 cycles
 instr count: 19, instr addr: 0014, instr: 9b00 done in 8 cycles
-	INDs differ: found (P), expected (S)
-		at instr count: 19, instr addr: 0014, instr: 9b00
-	reg 1 differs, found: 0003, expected: 0000
+	INDs differ: found (PZ), expected (S)
 		at instr count: 19, instr addr: 0014, instr: 9b00
 --------------------------------------------------------------------------------
 Stopped at time : 209625 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

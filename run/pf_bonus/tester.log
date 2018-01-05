@@ -14,7 +14,7 @@ instr count: 1, instr addr: 0000, instr: 033a done in 9 cycles
 instr count: 2, instr addr: 0001, instr: 8304 done in 8 cycles
 	CPs diverged: found 0002, expected 0003
 		at instr count: 2, instr addr: 0001, instr: 8304
-	INDs differ: found (), expected (PZ)
+	reg 1 differs, found: 0000, expected: 0001
 		at instr count: 2, instr addr: 0001, instr: 8304
 --------------------------------------------------------------------------------
 Stopped at time : 31405 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

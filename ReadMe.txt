@@ -12,6 +12,7 @@ Functionalitati adaugate:
 	in modul de adresare 00 incepand cu incarcarea src.
 
 
-
+Evolutia proiectului 
+Git: 
 ==========================================================================================
 Andrei Dumitrescu 333 AC
