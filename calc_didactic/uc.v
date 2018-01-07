@@ -134,6 +134,8 @@ assign rm   = {ri[13], ri[14], ri[15]};
 `define load_depls				  'h90				// load depls
 `define add_depls					  'h100 				// add depls
 `define load_instant				  'h110				// load imediate op
+`define push						  'h120				// push
+`define pop    					  'h130				// pop
 
 reg [state_width-1 : 0] state = `reset, state_next;
 reg [state_width-1 : 0] decoded_src, decoded_src_next;      // stores decoded source operand load state
@@ -223,11 +225,19 @@ always @(*) begin
 				
             if(cop[1] == 1'b0) begin           
 					if(cop[3] == 0) begin				// transfer data
-						decoded_d_next      = d;
-						decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-						decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
-						decoded_exec_next   = `exec_1op;
-						decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+						if(cop[5] == 1)begin				//push/pop
+							decoded_d_next      = d;
+							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+							decoded_src_next    = decoded_dst;
+							decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+						end
+						else begin							//mov
+							decoded_d_next      = d;
+							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+							decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
+							decoded_exec_next   = `exec_1op;
+							decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+						end
 					end
 					else begin								// one operand instructions
 					 decoded_d_next      = 0;
@@ -261,6 +271,99 @@ always @(*) begin
             endcase
         end
         
+		  `push:begin
+				regs_addr = `IS;
+				regs_oe = 1;
+				t2_we = 1;
+				state_next = `push + 1;
+		  end
+		  
+		  `push + 'd1:begin
+				t1_oe = 0;
+				t2_oe = 1;
+				alu_opcode = `SBB1;
+				alu_carry = 1;
+				alu_oe = 1;
+				
+				regs_addr = `IS;
+				regs_we = 1;
+				
+				t2_we = 1;
+				
+				am_we = 1;
+				
+				state_next = `push + 2;
+		  end
+		  
+		  `push +'d2:begin
+				am_oe = 1;
+				
+				t1_oe = 1;
+				t2_oe = 0;
+				alu_opcode = `OR;
+				alu_oe = 1;
+				ram_we = 1;
+				state_next = `push+3;
+				
+		  end
+		  `push+'d3:begin
+				state_next = `inc_cp;
+		  end
+		  
+		  `pop:begin
+				regs_addr = `IS;
+				regs_oe = 1;
+				am_we = 1;
+				t2_we = 1;
+				state_next = `pop +1;
+			end
+			
+			`pop + 'd1:begin
+				t1_oe = 0;
+				t2_oe = 1;
+				alu_opcode = `ADC;
+				alu_carry = 1;
+				alu_oe = 1;
+				
+				regs_addr = `IS;
+				//regs_we = 1;
+				
+				am_oe = 1;
+		
+				state_next = `pop+2;
+			end
+			
+			`pop+ 'd2:begin
+				ram_oe = 1;
+				t2_we = 1;
+				
+				if(mod == 2'b11)
+					state_next = `pop+4;
+				else
+					state_next = `pop+3;
+			end
+		  
+			`pop+ 'd3:begin
+			
+				t1_oe = 1;
+				t2_oe = 0;
+				alu_opcode = `OR;
+				alu_oe = 1;
+				am_we = 1;
+				
+				state_next = `pop+4;
+			end
+			
+			`pop+ 'd4:begin
+				t1_oe = 0;
+				t2_oe = 1;
+				alu_opcode = `OR;
+				alu_oe = 1;
+				t1_we = 1;
+				
+				state_next = decoded_store;
+			end
+		  
         `addr_sum: begin
             regs_addr = rm[1] ? `BB : `BA;
             regs_oe = 1;
@@ -439,9 +542,12 @@ always @(*) begin
             regs_addr = decoded_d ? rg : rm;
             regs_oe = 1;
             t1_we = 1;
-
-         
-				state_next = decoded_exec;
+				if(cop[0:6] == 6'b0000010)
+					state_next = `push;
+				else	if(cop[0:6] == 6'b0000011)
+					state_next = `pop;
+				else
+					state_next = decoded_exec;
         end
         
         `load_dst_mem: begin
@@ -463,7 +569,12 @@ always @(*) begin
         `load_dst_mem + 'd2: begin
             ram_oe = 1;
             t1_we = 1;
-				state_next = decoded_exec;
+				if(cop[0:6] == 6'b0000010)
+					state_next = `push;
+				else	if(cop[0:6] == 6'b0000011)
+					state_next = `pop;
+				else
+					state_next = decoded_exec;
         end
 		  
         `exec_1op: begin

@@ -22,10 +22,8 @@ instr count: 7, instr addr: 000b, instr: 6304 done in 13 cycles
 instr count: 8, instr addr: 000d, instr: e304 done in 13 cycles
 instr count: 9, instr addr: 000f, instr: 0104 done in 77 cycles
 instr count: 10, instr addr: 0018, instr: 0148 done in 23 cycles
-instr count: 11, instr addr: 001a, instr: 0021 done in 15 cycles
-	reg 3 differs, found: 0000, expected: ffff
-		at instr count: 11, instr addr: 001a, instr: 0021
-	ram addr 000003ff differs, found: 0000, expected: 0019
+instr count: 11, instr addr: 001a, instr: 0021
+	timeout after 1000 cycles
 		at instr count: 11, instr addr: 001a, instr: 0021
 --------------------------------------------------------------------------------
-Stopped at time : 126605 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 126115 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

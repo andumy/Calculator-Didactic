@@ -143,20 +143,22 @@ WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\re
 Elaborating module <bus(width=16)>.
 
 Elaborating module <uc(word_width=16)>.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 227: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 228: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 230: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 234: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 235: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 232: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 236: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 237: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 242: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 243: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 239: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 244: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 245: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 251: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 247: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 252: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 253: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 255: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 265: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 273: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 332: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 261: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 265: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 368: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 376: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 435: Result of 32-bit expression is truncated to fit in 16-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -233,10 +235,10 @@ WARNING:Xst:647 - Input <ind<15:1>> is never used. This port will be preserved a
     Found 16-bit register for signal <decoded_store>.
     Found 1-bit register for signal <decoded_d>.
     Found 16-bit register for signal <state>.
-    Found 16-bit 4-to-1 multiplexer for signal <mod[0]_GND_7_o_wide_mux_62_OUT> created at line 249.
+    Found 16-bit 4-to-1 multiplexer for signal <mod[0]_GND_7_o_wide_mux_74_OUT> created at line 259.
     Summary:
 	inferred  81 D-type flip-flop(s).
-	inferred  23 Multiplexer(s).
+	inferred  25 Multiplexer(s).
 Unit <uc> synthesized.
 
 =========================================================================
@@ -254,10 +256,10 @@ Macro Statistics
 # Comparators                                          : 5
  1-bit comparator equal                                : 1
  1-bit comparator not equal                            : 4
-# Multiplexers                                         : 54
+# Multiplexers                                         : 56
  1-bit 2-to-1 multiplexer                              : 25
  16-bit 12-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 10
+ 16-bit 2-to-1 multiplexer                             : 12
  16-bit 4-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
  32-bit 2-to-1 multiplexer                             : 12
@@ -272,9 +274,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <decoded_exec_0> in Unit <uc> is equivalent to the following 12 FFs/Latches, which will be removed : <decoded_exec_1> <decoded_exec_3> <decoded_exec_4> <decoded_exec_7> <decoded_exec_8> <decoded_exec_9> <decoded_exec_10> <decoded_exec_11> <decoded_exec_12> <decoded_exec_13> <decoded_exec_14> <decoded_exec_15> 
 INFO:Xst:2261 - The FF/Latch <decoded_exec_5> in Unit <uc> is equivalent to the following FF/Latch, which will be removed : <decoded_exec_6> 
-WARNING:Xst:1710 - FF/Latch <decoded_exec_5> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <decoded_exec_0> in Unit <uc> is equivalent to the following 12 FFs/Latches, which will be removed : <decoded_exec_1> <decoded_exec_3> <decoded_exec_4> <decoded_exec_7> <decoded_exec_8> <decoded_exec_9> <decoded_exec_10> <decoded_exec_11> <decoded_exec_12> <decoded_exec_13> <decoded_exec_14> <decoded_exec_15> 
 WARNING:Xst:1710 - FF/Latch <decoded_exec_0> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_15> (without init value) has a constant value of 0 in block <aie>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_14> (without init value) has a constant value of 0 in block <aie>. This FF/Latch will be trimmed during the optimization process.
@@ -292,7 +293,6 @@ WARNING:Xst:1710 - FF/Latch <data_3> (without init value) has a constant value o
 WARNING:Xst:1710 - FF/Latch <data_2> (without init value) has a constant value of 0 in block <aie>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_1> (without init value) has a constant value of 0 in block <aie>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_0> (without init value) has a constant value of 0 in block <aie>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2404 -  FFs/Latches <decoded_exec<15:7>> (without init value) have a constant value of 0 in block <uc>.
 
 Synthesizing (advanced) Unit <registers>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_regs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -323,15 +323,15 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  17-bit adder carry in                                 : 1
  17-bit subtractor borrow in                           : 2
-# Registers                                            : 184
- Flip-Flops                                            : 184
+# Registers                                            : 193
+ Flip-Flops                                            : 193
 # Comparators                                          : 5
  1-bit comparator equal                                : 1
  1-bit comparator not equal                            : 4
-# Multiplexers                                         : 54
+# Multiplexers                                         : 56
  1-bit 2-to-1 multiplexer                              : 25
  16-bit 12-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 10
+ 16-bit 2-to-1 multiplexer                             : 12
  16-bit 4-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
  32-bit 2-to-1 multiplexer                             : 12
@@ -349,9 +349,50 @@ WARNING:Xst:1710 - FF/Latch <decoded_exec_0> (without init value) has a constant
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_4> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_5> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_6> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <decoded_dst_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_7> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_8> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_9> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_10> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_11> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_12> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_13> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_exec_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <decoded_exec_5> in Unit <uc> is equivalent to the following FF/Latch, which will be removed : <decoded_exec_6> 
+WARNING:Xst:1710 - FF/Latch <decoded_store_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_8> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_9> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_10> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_11> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_12> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_13> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_0> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_5> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_7> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_8> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_9> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_10> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_11> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_12> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_13> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_3> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_9> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_10> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_11> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_12> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_13> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_14> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_15> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_0> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_4> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_5> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_6> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
@@ -365,42 +406,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_13> (wi
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_0> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_8> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_9> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_10> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_11> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_12> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_13> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_store_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_3> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_9> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_10> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_11> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_12> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_13> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_14> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_15> has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_0> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_3> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_4> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_5> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_7> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_8> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_9> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_10> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_11> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_12> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_13> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_src_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_0> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_1> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <decoded_src_6> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <decoded_store_4> in Unit <uc> is equivalent to the following 2 FFs/Latches, which will be removed : <decoded_store_5> <decoded_store_6> 
+WARNING:Xst:1710 - FF/Latch <decoded_src_6> (without init value) has a constant value of 1 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <calc_didactic> ...
 
@@ -447,12 +454,10 @@ Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block calc_didactic, actual ratio is 6.
 FlipFlop uc/state_0 has been replicated 2 time(s)
 FlipFlop uc/state_1 has been replicated 1 time(s)
-FlipFlop uc/state_2 has been replicated 2 time(s)
+FlipFlop uc/state_2 has been replicated 1 time(s)
 FlipFlop uc/state_4 has been replicated 1 time(s)
-FlipFlop uc/state_5 has been replicated 2 time(s)
-FlipFlop uc/state_6 has been replicated 1 time(s)
-FlipFlop uc/state_7 has been replicated 2 time(s)
-FlipFlop uc/state_8 has been replicated 2 time(s)
+FlipFlop uc/state_5 has been replicated 1 time(s)
+FlipFlop uc/state_8 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -460,8 +465,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 124
- Flip-Flops                                            : 124
+# Registers                                            : 120
+ Flip-Flops                                            : 120
 
 =========================================================================
 
@@ -484,25 +489,26 @@ Top Level Output File Name         : tester.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 703
+# BELS                             : 743
 #      GND                         : 1
-#      LUT2                        : 58
-#      LUT2_D                      : 5
-#      LUT2_L                      : 7
-#      LUT3                        : 72
+#      INV                         : 4
+#      LUT2                        : 48
+#      LUT2_D                      : 7
+#      LUT2_L                      : 12
+#      LUT3                        : 98
 #      LUT3_D                      : 14
-#      LUT3_L                      : 12
-#      LUT4                        : 326
-#      LUT4_D                      : 38
-#      LUT4_L                      : 31
+#      LUT3_L                      : 8
+#      LUT4                        : 310
+#      LUT4_D                      : 73
+#      LUT4_L                      : 33
 #      MUXCY                       : 48
-#      MUXF5                       : 40
+#      MUXF5                       : 36
 #      VCC                         : 1
 #      XORCY                       : 50
-# FlipFlops/Latches                : 124
+# FlipFlops/Latches                : 120
 #      FDE                         : 7
-#      FDR                         : 21
-#      FDRE                        : 96
+#      FDR                         : 15
+#      FDRE                        : 98
 # RAMS                             : 16
 #      RAM16X1D                    : 16
 # Clock Buffers                    : 1
@@ -518,10 +524,10 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                      334  out of   4656     7%  
- Number of Slice Flip Flops:            124  out of   9312     1%  
- Number of 4 input LUTs:                595  out of   9312     6%  
-    Number used as logic:               563
+ Number of Slices:                      350  out of   4656     7%  
+ Number of Slice Flip Flops:            120  out of   9312     1%  
+ Number of 4 input LUTs:                639  out of   9312     6%  
+    Number used as logic:               607
     Number used as RAMs:                 32
  Number of IOs:                         245
  Number of bonded IOBs:                 234  out of    232   100% (*) 
@@ -550,7 +556,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 140   |
+clk                                | BUFGP                  | 136   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -561,10 +567,10 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 15.356ns (Maximum Frequency: 65.121MHz)
-   Minimum input arrival time before clock: 7.278ns
-   Maximum output required time after clock: 17.566ns
-   Maximum combinational path delay: 9.459ns
+   Minimum period: 16.813ns (Maximum Frequency: 59.479MHz)
+   Minimum input arrival time before clock: 8.032ns
+   Maximum output required time after clock: 19.109ns
+   Maximum combinational path delay: 9.138ns
 
 Timing Details:
 ---------------
@@ -572,113 +578,119 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 15.356ns (frequency: 65.121MHz)
-  Total number of paths / destination ports: 393787 / 307
+  Clock period: 16.813ns (frequency: 59.479MHz)
+  Total number of paths / destination ports: 724969 / 306
 -------------------------------------------------------------------------
-Delay:               15.356ns (Levels of Logic = 13)
-  Source:            uc/state_1_1 (FF)
+Delay:               16.813ns (Levels of Logic = 19)
+  Source:            uc/state_6 (FF)
   Destination:       ind/data_4 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: uc/state_1_1 to ind/data_4
+  Data Path: uc/state_6 to ind/data_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.591   0.595  uc/state_1_1 (uc/state_1_1)
-     LUT3_D:I0->LO         1   0.704   0.135  uc/t2_we111 (N269)
-     LUT3:I2->O            1   0.704   0.424  uc/out432 (uc/out432)
-     LUT4_D:I3->O         15   0.704   1.021  uc/out4311 (uc/out43)
-     LUT4_D:I3->O         14   0.704   1.079  uc/t2_oe_2 (uc/t2_oe1)
-     LUT2:I1->O            1   0.704   0.420  t2/Mmux_n000661 (t2_out<14>)
-     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14>)
-     XORCY:CI->O           3   0.804   0.566  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_10_OUT<15>)
-     LUT3:I2->O            1   0.704   0.000  alu/Mmux_result14119_G (N185)
-     MUXF5:I1->O           1   0.321   0.424  alu/Mmux_result14119 (alu/Mmux_result14119)
-     LUT4:I3->O            5   0.704   0.668  alu/Mmux_result14180 (alu/Mmux_result14180)
-     LUT4:I2->O            1   0.704   0.455  Mmux_ind_in1134 (Mmux_ind_in1134)
-     LUT4:I2->O            1   0.704   0.000  Mmux_ind_in1162_G (N191)
-     MUXF5:I1->O           1   0.321   0.000  Mmux_ind_in1162 (Mmux_ind_in1162)
+     FDR:C->Q             19   0.591   1.164  uc/state_6 (uc/state_6)
+     LUT3_D:I1->O         19   0.704   1.089  uc/state_next<4>11 (uc/state_next<4>1)
+     LUT4_D:I3->LO         1   0.704   0.104  uc/state[15]_GND_7_o_equal_140_o<15>1 (N436)
+     LUT4:I3->O           14   0.704   1.004  uc/t2_oe1 (uc/t2_oe1)
+     LUT4_D:I3->O         65   0.704   1.277  uc/t2_oe12 (t2_oe)
+     LUT4:I3->O            1   0.704   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_lut<4> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_lut<4>)
+     MUXCY:S->O            1   0.464   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<4> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<5> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<6> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<7> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<8> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<9> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<10> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<10>)
+     XORCY:CI->O           1   0.804   0.455  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_xor<11> (alu/GND_3_o_GND_3_o_sub_10_OUT<11>)
+     LUT3:I2->O            1   0.704   0.000  alu/Mmux_result6118_F (N287)
+     MUXF5:I0->O           1   0.321   0.424  alu/Mmux_result6118 (alu/Mmux_result6118)
+     LUT4_D:I3->O          3   0.704   0.535  alu/Mmux_result6167 (alu/Mmux_result6167)
+     LUT4:I3->O            1   0.704   0.455  Mmux_ind_in1131 (Mmux_ind_in1131)
+     LUT4:I2->O            1   0.704   0.424  Mmux_ind_in1119 (Mmux_ind_in1119)
+     LUT4:I3->O            1   0.704   0.000  Mmux_ind_in1162 (Mmux_ind_in1162)
      FDRE:D                    0.308          ind/data_4
     ----------------------------------------
-    Total                     15.356ns (9.569ns logic, 5.787ns route)
-                                       (62.3% logic, 37.7% route)
+    Total                     16.813ns (9.882ns logic, 6.931ns route)
+                                       (58.8% logic, 41.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 445 / 284
+  Total number of paths / destination ports: 398 / 282
 -------------------------------------------------------------------------
-Offset:              7.278ns (Levels of Logic = 6)
-  Source:            io_out<6> (PAD)
-  Destination:       ind/data_6 (FF)
+Offset:              8.032ns (Levels of Logic = 6)
+  Source:            io_out<4> (PAD)
+  Destination:       ind/data_4 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_out<6> to ind/data_6
+  Data Path: io_out<4> to ind/data_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.218   0.622  io_out_6_IBUF (io_out_6_IBUF)
-     LUT4:I0->O            1   0.704   0.000  mag/bus<6>51 (mag/bus<6>51)
-     MUXF5:I1->O           1   0.321   0.595  mag/bus<6>5_f5 (mag/bus<6>5)
-     LUT3:I0->O            1   0.704   0.499  alu/Mmux_result26179_SW0 (N40)
-     LUT4:I1->O            9   0.704   0.899  mag/bus<6>17 (aie_in<6>)
-     LUT2:I1->O            1   0.704   0.000  Mmux_ind_in131 (ind_in<6>)
-     FDRE:D                    0.308          ind/data_6
+     IBUF:I->O             1   1.218   0.595  io_out_4_IBUF (io_out_4_IBUF)
+     LUT3:I0->O            1   0.704   0.595  mag/bus<4>1 (mag/bus<4>1)
+     LUT4:I0->O            1   0.704   0.455  mag/bus<4>10 (mag/bus<4>10)
+     LUT4:I2->O           10   0.704   0.886  mag/bus<4>16 (aie_in<4>)
+     LUT4:I3->O            1   0.704   0.455  Mmux_ind_in1134_SW1 (N169)
+     LUT4:I2->O            1   0.704   0.000  Mmux_ind_in1162 (Mmux_ind_in1162)
+     FDRE:D                    0.308          ind/data_4
     ----------------------------------------
-    Total                      7.278ns (4.663ns logic, 2.615ns route)
-                                       (64.1% logic, 35.9% route)
+    Total                      8.032ns (5.046ns logic, 2.986ns route)
+                                       (62.8% logic, 37.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 126242 / 180
+  Total number of paths / destination ports: 223420 / 180
 -------------------------------------------------------------------------
-Offset:              17.566ns (Levels of Logic = 12)
-  Source:            uc/state_1_1 (FF)
+Offset:              19.109ns (Levels of Logic = 13)
+  Source:            uc/state_6 (FF)
   Destination:       io_in<15> (PAD)
   Source Clock:      clk rising
 
-  Data Path: uc/state_1_1 to io_in<15>
+  Data Path: uc/state_6 to io_in<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.591   0.595  uc/state_1_1 (uc/state_1_1)
-     LUT3_D:I0->LO         1   0.704   0.135  uc/t2_we111 (N269)
-     LUT3:I2->O            1   0.704   0.424  uc/out432 (uc/out432)
-     LUT4_D:I3->O         15   0.704   1.021  uc/out4311 (uc/out43)
-     LUT4_D:I3->O         14   0.704   1.079  uc/t2_oe_2 (uc/t2_oe1)
-     LUT2:I1->O            1   0.704   0.420  t2/Mmux_n000661 (t2_out<14>)
-     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14>)
-     XORCY:CI->O           3   0.804   0.566  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_10_OUT<15>)
-     LUT3:I2->O            1   0.704   0.000  alu/Mmux_result14119_G (N185)
-     MUXF5:I1->O           1   0.321   0.424  alu/Mmux_result14119 (alu/Mmux_result14119)
-     LUT4:I3->O            5   0.704   0.637  alu/Mmux_result14180 (alu/Mmux_result14180)
-     LUT4:I3->O            8   0.704   0.757  mag/bus<15>17 (aie_in<15>)
+     FDR:C->Q             19   0.591   1.164  uc/state_6 (uc/state_6)
+     LUT3_D:I1->O         19   0.704   1.089  uc/state_next<4>11 (uc/state_next<4>1)
+     LUT4_D:I3->LO         1   0.704   0.104  uc/state[15]_GND_7_o_equal_140_o<15>1 (N436)
+     LUT4:I3->O           14   0.704   1.004  uc/t2_oe1 (uc/t2_oe1)
+     LUT4_D:I3->O         65   0.704   1.352  uc/t2_oe12 (t2_oe)
+     LUT2:I1->O            2   0.704   0.447  t2/Mmux_n000651 (t2_out<13>)
+     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<13> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14>)
+     XORCY:CI->O           3   0.804   0.610  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_10_OUT<15>)
+     LUT3:I1->O            1   0.704   0.000  alu/Mmux_result14119_F (N307)
+     MUXF5:I0->O           1   0.321   0.424  alu/Mmux_result14119 (alu/Mmux_result14119)
+     LUT4_D:I3->O          4   0.704   0.591  alu/Mmux_result14168 (alu/Mmux_result14168)
+     LUT4:I3->O            8   0.704   0.757  mag/bus<15>16 (aie_in<15>)
      OBUF:I->O                 3.272          io_in_15_OBUF (io_in<15>)
     ----------------------------------------
-    Total                     17.566ns (11.508ns logic, 6.058ns route)
-                                       (65.5% logic, 34.5% route)
+    Total                     19.109ns (11.567ns logic, 7.542ns route)
+                                       (60.5% logic, 39.5% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 193 / 92
+  Total number of paths / destination ports: 172 / 92
 -------------------------------------------------------------------------
-Delay:               9.459ns (Levels of Logic = 6)
-  Source:            io_out<6> (PAD)
-  Destination:       io_in<6> (PAD)
+Delay:               9.138ns (Levels of Logic = 5)
+  Source:            io_out<1> (PAD)
+  Destination:       io_in<1> (PAD)
 
-  Data Path: io_out<6> to io_in<6>
+  Data Path: io_out<1> to io_in<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.218   0.622  io_out_6_IBUF (io_out_6_IBUF)
-     LUT4:I0->O            1   0.704   0.000  mag/bus<6>51 (mag/bus<6>51)
-     MUXF5:I1->O           1   0.321   0.595  mag/bus<6>5_f5 (mag/bus<6>5)
-     LUT3:I0->O            1   0.704   0.499  alu/Mmux_result26179_SW0 (N40)
-     LUT4:I1->O            9   0.704   0.820  mag/bus<6>17 (aie_in<6>)
-     OBUF:I->O                 3.272          io_in_6_OBUF (io_in<6>)
+     IBUF:I->O             1   1.218   0.595  io_out_1_IBUF (io_out_1_IBUF)
+     LUT3:I0->O            1   0.704   0.595  mag/bus<1>1 (mag/bus<1>1)
+     LUT4:I0->O            2   0.704   0.526  mag/bus<1>10 (mag/bus<1>10)
+     LUT3:I1->O            9   0.704   0.820  mag/bus<1>16 (aie_in<1>)
+     OBUF:I->O                 3.272          io_in_1_OBUF (io_in<1>)
     ----------------------------------------
-    Total                      9.459ns (6.923ns logic, 2.536ns route)
-                                       (73.2% logic, 26.8% route)
+    Total                      9.138ns (6.602ns logic, 2.536ns route)
+                                       (72.2% logic, 27.8% route)
 
 =========================================================================
 
@@ -690,14 +702,14 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   15.356|         |         |         |
+clk            |   16.813|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.55 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.96 secs
  
 WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
    for the specified device family. You are free to use it in order to take
@@ -712,6 +724,6 @@ WARNING:Xst:3152 - You have chosen to run a version of XST which is not the defa
 Total memory usage is 267108 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  132 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :  138 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

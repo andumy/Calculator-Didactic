@@ -25,10 +25,9 @@ instr count: 10, instr addr: 0009, instr: a348 done in 19 cycles
 instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
 instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
 instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
-instr count: 14, instr addr: 000f, instr: 2120 done in 19 cycles
-	reg 3 differs, found: 0000, expected: ffff
-		at instr count: 14, instr addr: 000f, instr: 2120
-	ram addr 000003ff differs, found: 0000, expected: ffff
-		at instr count: 14, instr addr: 000f, instr: 2120
+instr count: 14, instr addr: 000f, instr: 2120 done in 17 cycles
+instr count: 15, instr addr: 0011, instr: e160 done in 22 cycles
+	reg 3 differs, found: ffff, expected: 0000
+		at instr count: 15, instr addr: 0011, instr: e160
 --------------------------------------------------------------------------------
-Stopped at time : 157365 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 167935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
