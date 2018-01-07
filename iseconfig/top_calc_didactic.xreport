@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-01-05T11:36:37</DateModified>
+  <DateModified>2018-01-06T23:42:41</DateModified>
   <ModuleName>top_calc_didactic</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>E:/Facultate/An3/Sem 1/AC/Tema3/tema/iseconfig/top_calc_didactic.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Facultate/An3/Sem 1/AC/Tema3/tema</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>E:/Facultate/An3/Sem 1/AC/Tema3/tema\</ImplementationReportsDirectory>
   <DateInitialized>2018-01-05T11:36:37</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

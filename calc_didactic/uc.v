@@ -133,7 +133,7 @@ assign rm   = {ri[13], ri[14], ri[15]};
 `define inc_cp                  'h80            // increment program counter
 `define load_depls				  'h90				// load depls
 `define add_depls					  'h100 				// add depls
-
+`define load_instant				  'h110				// load imediate op
 reg [state_width-1 : 0] state = `reset, state_next;
 reg [state_width-1 : 0] decoded_src, decoded_src_next;      // stores decoded source operand load state
 reg [state_width-1 : 0] decoded_dst, decoded_dst_next;      // stores decoded destination operand load state
@@ -219,17 +219,27 @@ always @(*) begin
 
         `decode: begin
             // decode location of operands and operation
-            if(cop[1] == 1'b0) begin           // one operand instructions
-                decoded_d_next      = (cop[0:6] == 7'b0) ? d : 0;
+				
+            if(cop[1] == 1'b0) begin           
+					if(cop[3] == 0) begin				// transfer data
+						decoded_d_next      = d;
+						decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+						decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
+						decoded_exec_next   = `exec_1op;
+						decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+					end
+					else begin								// one operand instructions
+					 decoded_d_next      = 0;
+					 decoded_dst_next    = mod == 2'b11 ? `load_dst_reg : `load_dst_mem;
+					 decoded_src_next    = mod == 2'b11 ? `load_src_reg : `load_src_mem;
 					 decoded_exec_next   = `exec_1op;
-                decoded_dst_next    = (cop[0:6] == 7'b0) ?  decoded_exec_next : (mod == 2'b11 ? `load_dst_reg : `load_dst_mem);
-                decoded_src_next    = (cop[0:6] == 7'b0) ? ( mod == 2'b11 ? `load_src_reg : `load_src_mem) : decoded_dst_next;
-                decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
+					 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
+					 end
             end
-            else if(cop[1] == 1'b1) begin       // two operand instructions
+            else if(cop[1] == 1'b1 ) begin       // two operand instructions 
                 decoded_d_next      = d;
                 decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-                decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
+                decoded_src_next    = cop[2] == 1 ? (`load_instant) :((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
                 decoded_exec_next   = `exec_2op;
                 decoded_store_next  = !cop[3] ? `inc_cp : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
             end
@@ -436,7 +446,10 @@ always @(*) begin
 						 3'b101: alu_opcode = `SHR;                  // SHR
 						 3'b110: alu_opcode = `SAR;                  // SAR
 					endcase
+					ind_sel = 1;
+					ind_we = 1;
 				end
+				
 				if(cop[3] == 0) begin // transfer/date de control
 					t1_oe = 0;
 					t2_oe = 1;
@@ -444,13 +457,11 @@ always @(*) begin
 						3'b000: begin												// MOV
 							alu_opcode = `OR;
 						end
-						
 					endcase
 				end
             alu_oe = 1;
             t1_we = 1;
-            ind_sel = 1;
-            ind_we = 1;
+            
 
             state_next = decoded_store;
         end

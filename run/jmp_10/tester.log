@@ -18,15 +18,15 @@ instr count: 5, instr addr: 0004, instr: 273a done in 9 cycles
 instr count: 6, instr addr: 0005, instr: b73a done in 9 cycles
 instr count: 7, instr addr: 0006, instr: 6f3a done in 9 cycles
 instr count: 8, instr addr: 0007, instr: ff3a done in 9 cycles
-instr count: 9, instr addr: 0008, instr: 2308 done in 8 cycles
-instr count: 10, instr addr: 0009, instr: 2318 done in 8 cycles
-instr count: 11, instr addr: 000a, instr: a308 done in 17 cycles
-instr count: 12, instr addr: 000c, instr: a318 done in 8 cycles
+instr count: 9, instr addr: 0008, instr: 2308 done in 9 cycles
+instr count: 10, instr addr: 0009, instr: 2318 done in 9 cycles
+instr count: 11, instr addr: 000a, instr: a308 done in 19 cycles
+instr count: 12, instr addr: 000c, instr: a318 done in 9 cycles
 instr count: 13, instr addr: 000d, instr: 670a done in 9 cycles
 instr count: 14, instr addr: 000e, instr: 770a done in 9 cycles
 instr count: 15, instr addr: 000f, instr: ef0a done in 19 cycles
-instr count: 16, instr addr: 0011, instr: 2150 done in 18 cycles
-	ram addr 00000013 differs, found: 0011, expected: a150
+instr count: 16, instr addr: 0011, instr: 2150 done in 19 cycles
+	ram addr 00000013 differs, found: 0000, expected: a150
 		at instr count: 16, instr addr: 0011, instr: 2150
 --------------------------------------------------------------------------------
-Stopped at time : 178275 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 178285 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

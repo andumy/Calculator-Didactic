@@ -12,10 +12,8 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 --------------------------------------------------------------------------------
-instr count: 1, instr addr: 0000, instr: 0304 done in 8 cycles
+instr count: 1, instr addr: 0000, instr: 0304 done in 9 cycles
 	CPs diverged: found 0001, expected 0002
-		at instr count: 1, instr addr: 0000, instr: 0304
-	INDs differ: found (PZ), expected ()
 		at instr count: 1, instr addr: 0000, instr: 0304
 --------------------------------------------------------------------------------
 Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

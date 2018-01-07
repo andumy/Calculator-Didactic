@@ -25,4 +25,4 @@ Waiting for 1 sub-compilation(s) to finish...
 Compiled 16 Verilog Units
 Built simulation executable tester.exe
 Fuse Memory Usage: 30008 KB
-Fuse CPU Usage: 343 ms
+Fuse CPU Usage: 312 ms
