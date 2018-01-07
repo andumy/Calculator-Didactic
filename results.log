@@ -75,15 +75,21 @@ instr count: 10, instr addr: 0009, instr: a348 done in 19 cycles
 instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
 instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
 instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
-instr count: 14, instr addr: 000f, instr: 030e done in 9 cycles
-	CPs diverged: found 0010, expected 0011
-		at instr count: 14, instr addr: 000f, instr: 030e
-	INDs differ: found (PZ), expected (PS)
-		at instr count: 14, instr addr: 000f, instr: 030e
-	reg 0 differs, found: 0000, expected: ffff
-		at instr count: 14, instr addr: 000f, instr: 030e
+instr count: 14, instr addr: 000f, instr: 030e done in 13 cycles
+instr count: 15, instr addr: 0011, instr: 830e done in 13 cycles
+instr count: 16, instr addr: 0013, instr: 430e done in 13 cycles
+instr count: 17, instr addr: 0015, instr: c30e done in 13 cycles
+instr count: 18, instr addr: 0017, instr: 200e done in 17 cycles
+instr count: 19, instr addr: 0019, instr: e00e done in 17 cycles
+instr count: 20, instr addr: 001b, instr: 800e done in 19 cycles
+instr count: 21, instr addr: 001d, instr: 400e done in 19 cycles
+instr count: 22, instr addr: 001f, instr: a10e done in 23 cycles
+instr count: 23, instr addr: 0022, instr: 610e done in 23 cycles
+instr count: 24, instr addr: 0025, instr: 010e done in 25 cycles
+instr count: 25, instr addr: 0028, instr: c10e done in 25 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 157305 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 273285 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
 ********************************************************************************
 **** Running test call_bonus...
 ********************************************************************************
@@ -96,13 +102,23 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 --------------------------------------------------------------------------------
-instr count: 1, instr addr: 0000, instr: 2304 done in 9 cycles
-	CPs diverged: found 0001, expected 0002
-		at instr count: 1, instr addr: 0000, instr: 2304
-	reg 4 differs, found: 0000, expected: 000f
-		at instr count: 1, instr addr: 0000, instr: 2304
+instr count: 1, instr addr: 0000, instr: 2304 done in 13 cycles
+instr count: 2, instr addr: 0002, instr: a304 done in 13 cycles
+instr count: 3, instr addr: 0004, instr: e304 done in 13 cycles
+instr count: 4, instr addr: 0006, instr: 0304 done in 13 cycles
+instr count: 5, instr addr: 0008, instr: a880 done in 12 cycles
+instr count: 6, instr addr: 0009, instr: 3980 done in 18 cycles
+instr count: 7, instr addr: 000b, instr: e110 done in 19 cycles
+	CPs diverged: found 000d, expected 0016
+		at instr count: 7, instr addr: 000b, instr: e110
+	reg 3 differs, found: 0000, expected: ffff
+		at instr count: 7, instr addr: 000b, instr: e110
+	ram addr 00000016 differs, found: 000a, expected: 41a2
+		at instr count: 7, instr addr: 000b, instr: e110
+	ram addr 000003ff differs, found: 0000, expected: 000d
+		at instr count: 7, instr addr: 000b, instr: e110
 --------------------------------------------------------------------------------
-Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 84005 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
 ********************************************************************************
 **** Running test inc_10...
 ********************************************************************************
@@ -348,11 +364,19 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 --------------------------------------------------------------------------------
-instr count: 1, instr addr: 0000, instr: 0304 done in 9 cycles
-	CPs diverged: found 0001, expected 0002
-		at instr count: 1, instr addr: 0000, instr: 0304
+instr count: 1, instr addr: 0000, instr: 0304 done in 13 cycles
+instr count: 2, instr addr: 0002, instr: 4304 done in 13 cycles
+instr count: 3, instr addr: 0004, instr: c304 done in 13 cycles
+instr count: 4, instr addr: 0006, instr: 2304 done in 13 cycles
+instr count: 5, instr addr: 0008, instr: a304 done in 13 cycles
+instr count: 6, instr addr: 000a, instr: 6304 done in 13 cycles
+instr count: 7, instr addr: 000c, instr: e304 done in 13 cycles
+instr count: 8, instr addr: 000e, instr: 2104 done in 263 cycles
+instr count: 9, instr addr: 002f, instr: 768a
+	timeout after 1000 cycles
+		at instr count: 9, instr addr: 002f, instr: 768a
 --------------------------------------------------------------------------------
-Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 106925 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
 ********************************************************************************
 **** Running test mov_10...
 ********************************************************************************
@@ -435,13 +459,21 @@ instr count: 10, instr addr: 0009, instr: a348 done in 19 cycles
 instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
 instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
 instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
-instr count: 14, instr addr: 000f, instr: 0304 done in 9 cycles
-	CPs diverged: found 0010, expected 0011
-		at instr count: 14, instr addr: 000f, instr: 0304
-	reg 0 differs, found: 0000, expected: ffff
-		at instr count: 14, instr addr: 000f, instr: 0304
+instr count: 14, instr addr: 000f, instr: 0304 done in 13 cycles
+instr count: 15, instr addr: 0011, instr: 8304 done in 13 cycles
+instr count: 16, instr addr: 0013, instr: 4304 done in 13 cycles
+instr count: 17, instr addr: 0015, instr: c304 done in 13 cycles
+instr count: 18, instr addr: 0017, instr: 2004 done in 17 cycles
+instr count: 19, instr addr: 0019, instr: e004 done in 17 cycles
+instr count: 20, instr addr: 001b, instr: 8004 done in 19 cycles
+instr count: 21, instr addr: 001d, instr: 4004 done in 19 cycles
+instr count: 22, instr addr: 001f, instr: a104 done in 23 cycles
+instr count: 23, instr addr: 0022, instr: 6104 done in 23 cycles
+instr count: 24, instr addr: 0025, instr: 0104 done in 25 cycles
+instr count: 25, instr addr: 0028, instr: c104 done in 25 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 157305 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 273285 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
 ********************************************************************************
 **** Running test mov_simple...
 ********************************************************************************
@@ -502,13 +534,22 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 --------------------------------------------------------------------------------
 instr count: 1, instr addr: 0000, instr: 033a done in 9 cycles
-instr count: 2, instr addr: 0001, instr: 8304 done in 9 cycles
-	CPs diverged: found 0002, expected 0003
-		at instr count: 2, instr addr: 0001, instr: 8304
-	reg 1 differs, found: 0000, expected: 0001
-		at instr count: 2, instr addr: 0001, instr: 8304
+instr count: 2, instr addr: 0001, instr: 8304 done in 13 cycles
+instr count: 3, instr addr: 0003, instr: 4304 done in 13 cycles
+instr count: 4, instr addr: 0005, instr: c304 done in 13 cycles
+instr count: 5, instr addr: 0007, instr: 2304 done in 13 cycles
+instr count: 6, instr addr: 0009, instr: a304 done in 13 cycles
+instr count: 7, instr addr: 000b, instr: 6304 done in 13 cycles
+instr count: 8, instr addr: 000d, instr: e304 done in 13 cycles
+instr count: 9, instr addr: 000f, instr: 0104 done in 77 cycles
+instr count: 10, instr addr: 0018, instr: 0148 done in 23 cycles
+instr count: 11, instr addr: 001a, instr: 0021 done in 15 cycles
+	reg 3 differs, found: 0000, expected: ffff
+		at instr count: 11, instr addr: 001a, instr: 0021
+	ram addr 000003ff differs, found: 0000, expected: 0019
+		at instr count: 11, instr addr: 001a, instr: 0021
 --------------------------------------------------------------------------------
-Stopped at time : 31405 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 126605 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
 ********************************************************************************
 **** Running test push_10...
 ********************************************************************************

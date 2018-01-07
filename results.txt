@@ -1,5 +1,5 @@
  0.00:    24 out of    24 instructions (100.00% completed) test add_10
--1.00:     0 out of    12 instructions (  0.00% completed) test add_immediate
+ 0.00:    12 out of    12 instructions (100.00% completed) test add_immediate
  0.00:     0 out of    77 instructions (  0.00% completed) test call_bonus
  0.00:     8 out of     8 instructions (100.00% completed) test inc_10
 -0.98:     1 out of    47 instructions (  2.13% completed) test jcond
@@ -9,7 +9,7 @@
 -0.23:     1 out of    16 instructions (  6.25% completed) test jmp_simple_11
  0.00:     0 out of    69 instructions (  0.00% completed) test mod01_bonus
  0.00:    24 out of    24 instructions (100.00% completed) test mov_10
--1.00:     0 out of    12 instructions (  0.00% completed) test mov_immediate
+ 0.00:    12 out of    12 instructions (100.00% completed) test mov_immediate
  0.00:    14 out of    14 instructions (100.00% completed) test mov_simple
  0.00:     0 out of    16 instructions (  0.00% completed) test pf_bonus
 -1.00:     0 out of    16 instructions (  0.00% completed) test push_10

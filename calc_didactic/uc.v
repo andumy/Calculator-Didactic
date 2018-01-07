@@ -134,6 +134,7 @@ assign rm   = {ri[13], ri[14], ri[15]};
 `define load_depls				  'h90				// load depls
 `define add_depls					  'h100 				// add depls
 `define load_instant				  'h110				// load imediate op
+
 reg [state_width-1 : 0] state = `reset, state_next;
 reg [state_width-1 : 0] decoded_src, decoded_src_next;      // stores decoded source operand load state
 reg [state_width-1 : 0] decoded_dst, decoded_dst_next;      // stores decoded destination operand load state
@@ -239,7 +240,7 @@ always @(*) begin
             else if(cop[1] == 1'b1 ) begin       // two operand instructions 
                 decoded_d_next      = d;
                 decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-                decoded_src_next    = cop[2] == 1 ? (`load_instant) :((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
+                decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
                 decoded_exec_next   = `exec_2op;
                 decoded_store_next  = !cop[3] ? `inc_cp : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
             end
@@ -251,7 +252,7 @@ always @(*) begin
                 end
                 
                 2'b11: begin
-                    state_next = decoded_src_next;
+                    state_next = cop[2] == 1 ? `load_instant : decoded_src_next;
                 end
 					 
 					 2'b10: begin
@@ -276,7 +277,45 @@ always @(*) begin
             state_next = `addr_sum + 2;
         end
 
-			`load_depls: begin
+        `addr_sum + 'd2: begin
+            t1_oe = 1;
+            t2_oe = 1;
+            alu_carry = 0;
+            alu_opcode = `ADC;
+            alu_oe = 1;
+            if(decoded_d)
+                t2_we = 1;
+            else
+                t1_we = 1;
+				
+				if(mod == 2'b10)
+					state_next = `add_depls;
+				else
+					if(cop[2] == 1)
+						state_next = `load_instant;
+					else
+						state_next = decoded_src;
+        end
+        
+        `addr_reg: begin
+            regs_addr = rm;
+            regs_oe = 1;
+            if(decoded_d)
+                t2_we = 1;
+            else
+                t1_we = 1;
+					 
+            if(mod == 2'b10)
+					state_next = `add_depls;
+				else
+					if(cop[2] == 1)
+						state_next = `load_instant;
+					else
+						state_next = decoded_src;
+        end
+        
+		  
+		  `load_depls: begin
 				cp_oe = 1;
 				t1_we = 1;
 				state_next = `load_depls + 1;
@@ -292,38 +331,41 @@ always @(*) begin
 				
 				state_next = rm[0] ? `addr_reg : `addr_sum;
 		  end
-
-        `addr_sum + 'd2: begin
-            t1_oe = 1;
-            t2_oe = 1;
-            alu_carry = 0;
+		  `load_instant: begin
+				cp_oe = 1;
+				t2_we = 1;
+				state_next = `load_instant + 1;
+		  end
+		  
+		  `load_instant + 'd1: begin
+				t1_oe = 0;
+				t2_oe = 1;
+				alu_carry = 1;
             alu_opcode = `ADC;
-            alu_oe = 1;
-            if(decoded_d)
-                t2_we = 1;
-            else
+				alu_oe = 1;
+				cp_we = 1;
+				state_next = `load_instant + 2;
+		  end
+		  
+		  `load_instant + 'd2: begin
+				cp_oe = 1;
+				am_we = 1;
+				state_next = `load_instant + 3;
+		  end
+		  
+		  `load_instant + 'd3: begin
+				am_oe = 1;
+				state_next = `load_instant + 4;
+		  end
+		  
+		  `load_instant + 'd4: begin
+				ram_oe = 1;
+				if(decoded_d)
                 t1_we = 1;
-				
-				if(mod == 2'b10)
-					state_next = `add_depls;
-				else
-					state_next = decoded_src;
-        end
-        
-        `addr_reg: begin
-            regs_addr = rm;
-            regs_oe = 1;
-            if(decoded_d)
-                t2_we = 1;
             else
-                t1_we = 1;
-					 
-            if(mod == 2'b10)
-					state_next = `add_depls;
-				else
-					state_next = decoded_src;
-        end
-        
+                t2_we = 1;
+				state_next = decoded_dst;
+		  end
 		  
 		  `add_depls: begin
 				cp_oe = 1;
@@ -356,8 +398,10 @@ always @(*) begin
                 t2_we = 1;
             else
                 t1_we = 1;
-					
-				state_next = decoded_src;
+				if(cop[2] == 1)
+					state_next = `load_instant;
+				else	
+					state_next = decoded_src;
 		  end
 		  
         `load_src_reg: begin
@@ -396,7 +440,8 @@ always @(*) begin
             regs_oe = 1;
             t1_we = 1;
 
-            state_next = decoded_exec;
+         
+				state_next = decoded_exec;
         end
         
         `load_dst_mem: begin
@@ -418,10 +463,9 @@ always @(*) begin
         `load_dst_mem + 'd2: begin
             ram_oe = 1;
             t1_we = 1;
-
-            state_next = decoded_exec;
+				state_next = decoded_exec;
         end
-
+		  
         `exec_1op: begin
             
 				if(cop[3] == 1) begin// operatii
