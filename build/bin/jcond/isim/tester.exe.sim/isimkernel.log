@@ -3,14 +3,14 @@ Command line:
      -intstyle  ise
      -simmode  tcl
      -simrunnum  0
-     -socket  65145
+     -socket  58480
 
-Sun Jan 07 12:13:28 2018
+Sun Jan 07 13:14:53 2018
 
 
- Elaboration Time: 0.125 sec
+ Elaboration Time: 0.109375 sec
 
- Current Memory Usage: 1470.68 Meg
+ Current Memory Usage: 1314.44 Meg
 
  Total Signals          : 376
  Total Nets             : 1363
@@ -22,9 +22,9 @@ Sun Jan 07 12:13:28 2018
  Total Scalar Nets and Variables : 36972
 Total Line Count : 1572
 
- Total Simulation Time: 0.171875 sec
+ Total Simulation Time: 0.140625 sec
 
- Current Memory Usage: 1470.68 Meg
+ Current Memory Usage: 1314.44 Meg
 
-Sun Jan 07 12:13:29 2018
+Sun Jan 07 13:14:54 2018
 

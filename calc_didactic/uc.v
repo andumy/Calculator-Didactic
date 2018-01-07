@@ -228,7 +228,7 @@ always @(*) begin
 						if(cop[5] == 1)begin				//push/pop
 							decoded_d_next      = d;
 							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-							decoded_src_next    = decoded_dst;
+							decoded_src_next    = (cop[0:6] == 6'b0000011 && mod != 2'b11) ? `pop : decoded_dst;
 							decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
 						end
 						else begin							//mov
@@ -551,6 +551,7 @@ always @(*) begin
         end
         
         `load_dst_mem: begin
+		  
             t1_oe = 1;
             t2_oe = 0;
             alu_opcode = `OR;
