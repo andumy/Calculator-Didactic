@@ -77,10 +77,10 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">ind&lt;15:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">decoded_exec_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">uc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;decoded_exec_6&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">decoded_exec_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">uc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">12 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;decoded_exec_1&gt; &lt;decoded_exec_3&gt; &lt;decoded_exec_4&gt; &lt;decoded_exec_7&gt; &lt;decoded_exec_8&gt; &lt;decoded_exec_9&gt; &lt;decoded_exec_10&gt; &lt;decoded_exec_11&gt; &lt;decoded_exec_12&gt; &lt;decoded_exec_13&gt; &lt;decoded_exec_14&gt; &lt;decoded_exec_15&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">decoded_exec_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">uc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">12 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;decoded_exec_1&gt; &lt;decoded_exec_3&gt; &lt;decoded_exec_4&gt; &lt;decoded_exec_7&gt; &lt;decoded_exec_8&gt; &lt;decoded_exec_9&gt; &lt;decoded_exec_10&gt; &lt;decoded_exec_11&gt; &lt;decoded_exec_12&gt; &lt;decoded_exec_13&gt; &lt;decoded_exec_14&gt; &lt;decoded_exec_15&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">decoded_exec_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">uc</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;decoded_exec_6&gt; </arg>
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">decoded_exec_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">uc</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

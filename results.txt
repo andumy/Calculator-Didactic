@@ -12,5 +12,5 @@
  0.00:    12 out of    12 instructions (100.00% completed) test mov_immediate
  0.00:    14 out of    14 instructions (100.00% completed) test mov_simple
  0.00:     0 out of    16 instructions (  0.00% completed) test pf_bonus
--0.94:     1 out of    16 instructions (  6.25% completed) test push_10
--0.47:     1 out of    15 instructions (  6.67% completed) test push_simple
+-0.44:     9 out of    16 instructions ( 56.25% completed) test push_10
+-0.27:     7 out of    15 instructions ( 46.67% completed) test push_simple

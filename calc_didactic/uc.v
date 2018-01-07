@@ -281,7 +281,7 @@ always @(*) begin
 		  `push + 'd1:begin
 				t1_oe = 0;
 				t2_oe = 1;
-				alu_opcode = `SBB1;
+				alu_opcode = `SBB2;
 				alu_carry = 1;
 				alu_oe = 1;
 				
@@ -326,7 +326,7 @@ always @(*) begin
 				alu_oe = 1;
 				
 				regs_addr = `IS;
-				//regs_we = 1;
+				regs_we = 1;
 				
 				am_oe = 1;
 		
