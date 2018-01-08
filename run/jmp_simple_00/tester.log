@@ -31,10 +31,15 @@ instr count: 18, instr addr: 0014, instr: e70a done in 9 cycles
 instr count: 19, instr addr: 0015, instr: f70a done in 9 cycles
 instr count: 20, instr addr: 0016, instr: 230a done in 9 cycles
 instr count: 21, instr addr: 0017, instr: a30a done in 9 cycles
-instr count: 22, instr addr: 0018, instr: 2050 done in 13 cycles
-	CPs diverged: found 0019, expected 001a
-		at instr count: 22, instr addr: 0018, instr: 2050
-	ram addr 0000001a differs, found: 0018, expected: a050
-		at instr count: 22, instr addr: 0018, instr: 2050
+instr count: 22, instr addr: 0018, instr: 2050 done in 11 cycles
+instr count: 23, instr addr: 001a, instr: a050 done in 5 cycles
+instr count: 24, instr addr: 0019, instr: 0050 done in 7 cycles
+instr count: 25, instr addr: 001c, instr: 8050 done in 7 cycles
+instr count: 26, instr addr: 001b, instr: 4050 done in 7 cycles
+instr count: 27, instr addr: 001d, instr: c050 done in 7 cycles
+instr count: 28, instr addr: 001c, instr: 8050 done in 7 cycles
+instr count: 29, instr addr: 001b, instr: 4050 done in 7 cycles
+instr count: 30, instr addr: 001d, instr: c050 done in 7 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 241175 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 324895 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

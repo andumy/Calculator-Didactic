@@ -21,7 +21,7 @@ instr count: 7, instr addr: 000b, instr: e110 done in 19 cycles
 		at instr count: 7, instr addr: 000b, instr: e110
 	reg 3 differs, found: 0000, expected: ffff
 		at instr count: 7, instr addr: 000b, instr: e110
-	ram addr 00000016 differs, found: 000a, expected: 41a2
+	ram addr 00000016 differs, found: 0000, expected: 41a2
 		at instr count: 7, instr addr: 000b, instr: e110
 	ram addr 000003ff differs, found: 0000, expected: 000d
 		at instr count: 7, instr addr: 000b, instr: e110

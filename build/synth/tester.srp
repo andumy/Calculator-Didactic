@@ -147,19 +147,19 @@ WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 231: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 232: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 236: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 237: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 239: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 244: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 238: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 240: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 245: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 247: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 252: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 246: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 248: Result of 32-bit expression is truncated to fit in 16-bit target.
 WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 253: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 255: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 261: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 265: Result of 32-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 368: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 376: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 435: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 254: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 256: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 262: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 266: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 369: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 377: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 436: Result of 32-bit expression is truncated to fit in 16-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -236,10 +236,10 @@ WARNING:Xst:647 - Input <ind<15:1>> is never used. This port will be preserved a
     Found 16-bit register for signal <decoded_store>.
     Found 1-bit register for signal <decoded_d>.
     Found 16-bit register for signal <state>.
-    Found 16-bit 4-to-1 multiplexer for signal <mod[0]_GND_7_o_wide_mux_77_OUT> created at line 259.
+    Found 16-bit 4-to-1 multiplexer for signal <mod[0]_GND_7_o_wide_mux_84_OUT> created at line 260.
     Summary:
 	inferred  81 D-type flip-flop(s).
-	inferred  26 Multiplexer(s).
+	inferred  32 Multiplexer(s).
 Unit <uc> synthesized.
 
 =========================================================================
@@ -257,13 +257,13 @@ Macro Statistics
 # Comparators                                          : 5
  1-bit comparator equal                                : 1
  1-bit comparator not equal                            : 4
-# Multiplexers                                         : 57
- 1-bit 2-to-1 multiplexer                              : 25
+# Multiplexers                                         : 63
+ 1-bit 2-to-1 multiplexer                              : 28
  16-bit 12-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 12
+ 16-bit 2-to-1 multiplexer                             : 13
  16-bit 4-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 15
  4-bit 2-to-1 multiplexer                              : 3
 # Xors                                                 : 2
  1-bit xor16                                           : 1
@@ -329,13 +329,13 @@ Macro Statistics
 # Comparators                                          : 5
  1-bit comparator equal                                : 1
  1-bit comparator not equal                            : 4
-# Multiplexers                                         : 57
- 1-bit 2-to-1 multiplexer                              : 25
+# Multiplexers                                         : 63
+ 1-bit 2-to-1 multiplexer                              : 28
  16-bit 12-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 12
+ 16-bit 2-to-1 multiplexer                             : 13
  16-bit 4-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 15
  4-bit 2-to-1 multiplexer                              : 3
 # Xors                                                 : 2
  1-bit xor16                                           : 1
@@ -405,8 +405,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_12> (wi
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_13> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_14> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <decoded_dst_15> (without init value) has a constant value of 0 in block <uc>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <decoded_store_4> in Unit <uc> is equivalent to the following 2 FFs/Latches, which will be removed : <decoded_store_5> <decoded_store_6> 
-INFO:Xst:2261 - The FF/Latch <decoded_src_5> in Unit <uc> is equivalent to the following FF/Latch, which will be removed : <decoded_src_8> 
+INFO:Xst:2261 - The FF/Latch <decoded_store_5> in Unit <uc> is equivalent to the following FF/Latch, which will be removed : <decoded_store_6> 
 
 Optimizing unit <calc_didactic> ...
 
@@ -451,12 +450,11 @@ WARNING:Xst:2036 - Inserting OBUF on port <disp_data<1>> driven by black box <ra
 WARNING:Xst:2036 - Inserting OBUF on port <disp_data<0>> driven by black box <ram>. Possible simulation mismatch.
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block calc_didactic, actual ratio is 7.
-FlipFlop uc/state_0 has been replicated 2 time(s)
-FlipFlop uc/state_1 has been replicated 2 time(s)
+FlipFlop uc/state_0 has been replicated 3 time(s)
+FlipFlop uc/state_1 has been replicated 1 time(s)
 FlipFlop uc/state_2 has been replicated 2 time(s)
 FlipFlop uc/state_4 has been replicated 2 time(s)
-FlipFlop uc/state_5 has been replicated 1 time(s)
-FlipFlop uc/state_8 has been replicated 1 time(s)
+FlipFlop uc/state_5 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -464,8 +462,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 125
- Flip-Flops                                            : 125
+# Registers                                            : 127
+ Flip-Flops                                            : 127
 
 =========================================================================
 
@@ -488,24 +486,23 @@ Top Level Output File Name         : tester.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 763
+# BELS                             : 751
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 60
-#      LUT2_D                      : 9
-#      LUT2_L                      : 15
-#      LUT3                        : 98
-#      LUT3_D                      : 11
-#      LUT3_L                      : 13
-#      LUT4                        : 311
-#      LUT4_D                      : 50
-#      LUT4_L                      : 49
+#      LUT2                        : 34
+#      LUT2_D                      : 8
+#      LUT2_L                      : 11
+#      LUT3                        : 124
+#      LUT3_D                      : 27
+#      LUT3_L                      : 30
+#      LUT4                        : 306
+#      LUT4_D                      : 41
+#      LUT4_L                      : 37
 #      MUXCY                       : 48
-#      MUXF5                       : 46
+#      MUXF5                       : 33
 #      VCC                         : 1
 #      XORCY                       : 50
-# FlipFlops/Latches                : 125
-#      FDE                         : 9
+# FlipFlops/Latches                : 127
+#      FDE                         : 11
 #      FDR                         : 18
 #      FDRE                        : 98
 # RAMS                             : 16
@@ -523,10 +520,10 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                      362  out of   4656     7%  
- Number of Slice Flip Flops:            125  out of   9312     1%  
- Number of 4 input LUTs:                649  out of   9312     6%  
-    Number used as logic:               617
+ Number of Slices:                      356  out of   4656     7%  
+ Number of Slice Flip Flops:            127  out of   9312     1%  
+ Number of 4 input LUTs:                650  out of   9312     6%  
+    Number used as logic:               618
     Number used as RAMs:                 32
  Number of IOs:                         245
  Number of bonded IOBs:                 234  out of    232   100% (*) 
@@ -555,7 +552,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 141   |
+clk                                | BUFGP                  | 143   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -566,10 +563,10 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 16.912ns (Maximum Frequency: 59.129MHz)
-   Minimum input arrival time before clock: 6.904ns
-   Maximum output required time after clock: 19.153ns
-   Maximum combinational path delay: 7.970ns
+   Minimum period: 17.293ns (Maximum Frequency: 57.825MHz)
+   Minimum input arrival time before clock: 7.909ns
+   Maximum output required time after clock: 19.780ns
+   Maximum combinational path delay: 10.090ns
 
 Timing Details:
 ---------------
@@ -577,110 +574,118 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 16.912ns (frequency: 59.129MHz)
-  Total number of paths / destination ports: 1062475 / 313
+  Clock period: 17.293ns (frequency: 57.825MHz)
+  Total number of paths / destination ports: 1088875 / 317
 -------------------------------------------------------------------------
-Delay:               16.912ns (Levels of Logic = 13)
-  Source:            uc/state_5_1 (FF)
+Delay:               17.293ns (Levels of Logic = 15)
+  Source:            uc/state_8 (FF)
   Destination:       ind/data_4 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: uc/state_5_1 to ind/data_4
+  Data Path: uc/state_8 to ind/data_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.591   0.712  uc/state_5_1 (uc/state_5_1)
-     LUT2_D:I1->O          7   0.704   0.743  uc/state[15]_GND_7_o_equal_140_o<15>111 (uc/state[15]_GND_7_o_equal_140_o<15>11)
-     LUT4:I2->O           11   0.704   0.937  uc/state[15]_GND_7_o_equal_143_o<15>1 (uc/state[15]_GND_7_o_equal_143_o)
-     LUT4:I3->O            9   0.704   0.855  uc/t1_oe1_SW5 (N123)
-     LUT4_D:I2->O         67   0.704   1.352  uc/t1_oe1 (t1_oe)
-     LUT2:I1->O            2   0.704   0.447  t1/Mmux_n000661 (t1_out<14>)
-     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_6_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_6_OUT_Madd_cy<14>)
-     XORCY:CI->O           3   0.804   0.706  alu/Msub_GND_3_o_GND_3_o_sub_6_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_6_OUT<15>)
-     LUT3:I0->O            1   0.704   0.000  alu/Mmux_result14119_G (N430)
-     MUXF5:I1->O           1   0.321   0.424  alu/Mmux_result14119 (alu/Mmux_result14119)
-     LUT4_D:I3->O          7   0.704   0.712  alu/Mmux_result14180 (alu/Mmux_result14180)
-     LUT4:I3->O            1   0.704   0.000  Mmux_ind_in1134_SW0_F (N315)
-     MUXF5:I0->O           1   0.321   0.455  Mmux_ind_in1134_SW0 (N180)
-     LUT4:I2->O            1   0.704   0.000  Mmux_ind_in1162 (Mmux_ind_in1162)
-     FDRE:D                    0.308          ind/data_4
+     FDR:C->Q             19   0.591   1.120  uc/state_8 (uc/state_8)
+     LUT3:I2->O            2   0.704   0.451  uc/state[15]_GND_7_o_equal_137_o<15>1_SW0 (N93)
+     LUT4:I3->O            4   0.704   0.591  uc/state[15]_GND_7_o_equal_137_o<15>2 (uc/state[15]_GND_7_o_equal_137_o)
+     LUT4_D:I3->LO         1   0.704   0.104  uc/t2_oe26_SW0_SW0 (N391)
+     LUT4:I3->O           14   0.704   1.004  uc/t2_oe26_SW0 (N45)
+     LUT4_D:I3->O         58   0.704   1.349  uc/t2_oe26 (t2_oe)
+     LUT2:I1->O            2   0.704   0.447  t2/Mmux_n000641 (t2_out<12>)
+     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<12> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<13> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14>)
+     XORCY:CI->O           3   0.804   0.566  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_10_OUT<15>)
+     LUT3:I2->O            1   0.704   0.000  alu/Mmux_result14118_F (N326)
+     MUXF5:I0->O           1   0.321   0.424  alu/Mmux_result14118 (alu/Mmux_result14118)
+     LUT4:I3->O            5   0.704   0.668  alu/Mmux_result14179 (alu/Mmux_result14179)
+     LUT4:I2->O            1   0.704   0.499  Mmux_ind_in970 (Mmux_ind_in970)
+     LUT4:I1->O            1   0.704   0.000  Mmux_ind_in991 (Mmux_ind_in991)
+     FDRE:D                    0.308          ind/data_2
     ----------------------------------------
-    Total                     16.912ns (9.569ns logic, 7.343ns route)
-                                       (56.6% logic, 43.4% route)
+    Total                     17.293ns (10.070ns logic, 7.223ns route)
+                                       (58.2% logic, 41.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 401 / 287
+  Total number of paths / destination ports: 401 / 289
 -------------------------------------------------------------------------
-Offset:              6.904ns (Levels of Logic = 5)
-  Source:            io_out<4> (PAD)
-  Destination:       ind/data_4 (FF)
+Offset:              7.909ns (Levels of Logic = 6)
+  Source:            io_out<7> (PAD)
+  Destination:       ind/data_7 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_out<4> to ind/data_4
+  Data Path: io_out<7> to ind/data_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.218   0.595  io_out_4_IBUF (io_out_4_IBUF)
-     LUT4:I0->O            1   0.704   0.595  mag/bus<4>5 (mag/bus<4>5)
-     LUT4:I0->O           10   0.704   0.882  mag/bus<4>17 (aie_in<4>)
-     MUXF5:S->O            1   0.739   0.455  Mmux_ind_in1134_SW0 (N180)
-     LUT4:I2->O            1   0.704   0.000  Mmux_ind_in1162 (Mmux_ind_in1162)
-     FDRE:D                    0.308          ind/data_4
+     IBUF:I->O             1   1.218   0.595  io_out_7_IBUF (io_out_7_IBUF)
+     LUT3_L:I0->LO         1   0.704   0.275  mag/bus<7>1 (mag/bus<7>1)
+     LUT3:I0->O            1   0.704   0.595  mag/bus<7>4 (mag/bus<7>4)
+     LUT3:I0->O            1   0.704   0.499  alu/Mmux_result28178_SW0 (N77)
+     LUT4:I1->O            9   0.704   0.899  mag/bus<7>17 (aie_in<7>)
+     LUT2:I1->O            1   0.704   0.000  Mmux_ind_in141 (ind_in<7>)
+     FDRE:D                    0.308          ind/data_7
     ----------------------------------------
-    Total                      6.904ns (4.377ns logic, 2.527ns route)
-                                       (63.4% logic, 36.6% route)
+    Total                      7.909ns (5.046ns logic, 2.863ns route)
+                                       (63.8% logic, 36.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 316689 / 180
+  Total number of paths / destination ports: 345349 / 180
 -------------------------------------------------------------------------
-Offset:              19.153ns (Levels of Logic = 12)
-  Source:            uc/state_5_1 (FF)
+Offset:              19.780ns (Levels of Logic = 15)
+  Source:            uc/state_8 (FF)
   Destination:       io_in<15> (PAD)
   Source Clock:      clk rising
 
-  Data Path: uc/state_5_1 to io_in<15>
+  Data Path: uc/state_8 to io_in<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.591   0.712  uc/state_5_1 (uc/state_5_1)
-     LUT2_D:I1->O          7   0.704   0.743  uc/state[15]_GND_7_o_equal_140_o<15>111 (uc/state[15]_GND_7_o_equal_140_o<15>11)
-     LUT4:I2->O           11   0.704   0.937  uc/state[15]_GND_7_o_equal_143_o<15>1 (uc/state[15]_GND_7_o_equal_143_o)
-     LUT4:I3->O            9   0.704   0.855  uc/t1_oe1_SW5 (N123)
-     LUT4_D:I2->O         67   0.704   1.352  uc/t1_oe1 (t1_oe)
-     LUT2:I1->O            2   0.704   0.447  t1/Mmux_n000661 (t1_out<14>)
-     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_6_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_6_OUT_Madd_cy<14>)
-     XORCY:CI->O           3   0.804   0.706  alu/Msub_GND_3_o_GND_3_o_sub_6_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_6_OUT<15>)
-     LUT3:I0->O            1   0.704   0.000  alu/Mmux_result14119_G (N430)
-     MUXF5:I1->O           1   0.321   0.424  alu/Mmux_result14119 (alu/Mmux_result14119)
-     LUT4_D:I3->O          7   0.704   0.712  alu/Mmux_result14180 (alu/Mmux_result14180)
+     FDR:C->Q             19   0.591   1.120  uc/state_8 (uc/state_8)
+     LUT3:I2->O            2   0.704   0.451  uc/state[15]_GND_7_o_equal_137_o<15>1_SW0 (N93)
+     LUT4:I3->O            4   0.704   0.591  uc/state[15]_GND_7_o_equal_137_o<15>2 (uc/state[15]_GND_7_o_equal_137_o)
+     LUT4_D:I3->LO         1   0.704   0.104  uc/t2_oe26_SW0_SW0 (N391)
+     LUT4:I3->O           14   0.704   1.004  uc/t2_oe26_SW0 (N45)
+     LUT4_D:I3->O         58   0.704   1.349  uc/t2_oe26 (t2_oe)
+     LUT2:I1->O            2   0.704   0.447  t2/Mmux_n000641 (t2_out<12>)
+     MUXCY:DI->O           1   0.888   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<12> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<13> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14> (alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_cy<14>)
+     XORCY:CI->O           3   0.804   0.566  alu/Msub_GND_3_o_GND_3_o_sub_10_OUT_Madd_xor<15> (alu/GND_3_o_GND_3_o_sub_10_OUT<15>)
+     LUT3:I2->O            1   0.704   0.000  alu/Mmux_result14118_F (N326)
+     MUXF5:I0->O           1   0.321   0.424  alu/Mmux_result14118 (alu/Mmux_result14118)
+     LUT4:I3->O            5   0.704   0.637  alu/Mmux_result14179 (alu/Mmux_result14179)
      LUT4:I3->O            8   0.704   0.757  mag/bus<15>17 (aie_in<15>)
      OBUF:I->O                 3.272          io_in_15_OBUF (io_in<15>)
     ----------------------------------------
-    Total                     19.153ns (11.508ns logic, 7.645ns route)
-                                       (60.1% logic, 39.9% route)
+    Total                     19.780ns (12.330ns logic, 7.450ns route)
+                                       (62.3% logic, 37.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 172 / 92
 -------------------------------------------------------------------------
-Delay:               7.970ns (Levels of Logic = 4)
-  Source:            io_out<4> (PAD)
-  Destination:       io_in<4> (PAD)
+Delay:               10.090ns (Levels of Logic = 6)
+  Source:            io_out<7> (PAD)
+  Destination:       io_in<7> (PAD)
 
-  Data Path: io_out<4> to io_in<4>
+  Data Path: io_out<7> to io_in<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.218   0.595  io_out_4_IBUF (io_out_4_IBUF)
-     LUT4:I0->O            1   0.704   0.595  mag/bus<4>5 (mag/bus<4>5)
-     LUT4:I0->O           10   0.704   0.882  mag/bus<4>17 (aie_in<4>)
-     OBUF:I->O                 3.272          io_in_4_OBUF (io_in<4>)
+     IBUF:I->O             1   1.218   0.595  io_out_7_IBUF (io_out_7_IBUF)
+     LUT3_L:I0->LO         1   0.704   0.275  mag/bus<7>1 (mag/bus<7>1)
+     LUT3:I0->O            1   0.704   0.595  mag/bus<7>4 (mag/bus<7>4)
+     LUT3:I0->O            1   0.704   0.499  alu/Mmux_result28178_SW0 (N77)
+     LUT4:I1->O            9   0.704   0.820  mag/bus<7>17 (aie_in<7>)
+     OBUF:I->O                 3.272          io_in_7_OBUF (io_in<7>)
     ----------------------------------------
-    Total                      7.970ns (5.898ns logic, 2.072ns route)
-                                       (74.0% logic, 26.0% route)
+    Total                     10.090ns (7.306ns logic, 2.784ns route)
+                                       (72.4% logic, 27.6% route)
 
 =========================================================================
 
@@ -692,14 +697,14 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   16.912|         |         |         |
+clk            |   17.293|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.79 secs
  
 WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
    for the specified device family. You are free to use it in order to take
@@ -715,5 +720,5 @@ Total memory usage is 267108 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  136 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

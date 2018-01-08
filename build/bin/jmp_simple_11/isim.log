@@ -40,11 +40,22 @@ instr count: 25, instr addr: 0020, instr: cf0a done in 9 cycles
 instr count: 26, instr addr: 0021, instr: 2f0a done in 9 cycles
 instr count: 27, instr addr: 0022, instr: af0a done in 9 cycles
 instr count: 28, instr addr: 0023, instr: ef0a done in 9 cycles
-instr count: 29, instr addr: 0024, instr: 0350 done in 9 cycles
-instr count: 30, instr addr: 0025, instr: 8350 done in 9 cycles
-	CPs diverged: found 0026, expected 0027
-		at instr count: 30, instr addr: 0025, instr: 8350
-	reg 1 differs, found: 0025, expected: 0027
-		at instr count: 30, instr addr: 0025, instr: 8350
+instr count: 29, instr addr: 0024, instr: 0350 done in 6 cycles
+instr count: 30, instr addr: 0025, instr: 8350 done in 6 cycles
+instr count: 31, instr addr: 0027, instr: c350 done in 6 cycles
+instr count: 32, instr addr: 0026, instr: 4350 done in 6 cycles
+instr count: 33, instr addr: 0028, instr: 2350 done in 6 cycles
+instr count: 34, instr addr: 002b, instr: e350 done in 6 cycles
+instr count: 35, instr addr: 0029, instr: a350 done in 6 cycles
+instr count: 36, instr addr: 002a, instr: 6350 done in 6 cycles
+instr count: 37, instr addr: 0024, instr: 0350 done in 6 cycles
+instr count: 38, instr addr: 0025, instr: 8350 done in 6 cycles
+instr count: 39, instr addr: 0027, instr: c350 done in 6 cycles
+instr count: 40, instr addr: 0026, instr: 4350 done in 6 cycles
+instr count: 41, instr addr: 0028, instr: 2350 done in 6 cycles
+instr count: 42, instr addr: 002b, instr: e350 done in 6 cycles
+instr count: 43, instr addr: 0029, instr: a350 done in 6 cycles
+instr count: 44, instr addr: 002a, instr: 6350 done in 6 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 325535 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 471835 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

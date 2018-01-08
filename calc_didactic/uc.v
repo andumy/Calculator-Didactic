@@ -231,12 +231,13 @@ always @(*) begin
 							decoded_src_next    = (cop[0:6] == 6'b0000011 && mod != 2'b11) ? `pop : decoded_dst;
 							decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
 						end
-						else begin							//mov
+						else begin							//mov/jmp
 							decoded_d_next      = d;
 							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-							decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
 							decoded_exec_next   = `exec_1op;
-							decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+							decoded_src_next    = (cop[4:6]== 3'b101 && mod !=2'b11) ? decoded_exec : ((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
+							
+							decoded_store_next  = cop[4:6]== 3'b101 ? (mod == 2'b10 ? `inc_cp : `fetch) : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
 						end
 					end
 					else begin								// one operand instructions
@@ -270,7 +271,7 @@ always @(*) begin
 					 end
             endcase
         end
-        
+		  
 		  `push:begin
 				regs_addr = `IS;
 				regs_oe = 1;
@@ -607,13 +608,20 @@ always @(*) begin
 				end
 				
 				if(cop[3] == 0) begin // transfer/date de control
-					t1_oe = 0;
-					t2_oe = 1;
+					
 					case(cop[4:6])
 						3'b000: begin												// MOV
+							t2_oe = 1;
 							alu_opcode = `OR;
 						end
+						3'b101:begin												// JMP
+							t1_oe = 1;
+							alu_opcode = `OR;
+							cp_we = 1;
+						end
 					endcase
+					ind_sel = 1;
+					ind_we = 1;
 				end
             alu_oe = 1;
             t1_we = 1;
