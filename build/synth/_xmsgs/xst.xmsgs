@@ -62,13 +62,13 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 266: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 369: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 382: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 377: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 403: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 436: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"E:\Facultate\An3\Sem 1\AC\Tema3\tema\calc_didactic\uc.v" Line 411: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">disp_addr&lt;11:10&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.

@@ -235,9 +235,9 @@ always @(*) begin
 							decoded_d_next      = d;
 							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
 							decoded_exec_next   = `exec_1op;
-							decoded_src_next    = (cop[4:6]== 3'b101 && mod !=2'b11) ? decoded_exec : ((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
+							decoded_src_next    = (cop[4:6]== 3'b101 && mod != 2'b11) ? `exec_1op : ((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
 							
-							decoded_store_next  = cop[4:6]== 3'b101 ? (mod == 2'b10 ? `inc_cp : `fetch) : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
+							decoded_store_next  = cop[4:6]== 3'b101 ? `fetch : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
 						end
 					end
 					else begin								// one operand instructions
@@ -365,7 +365,41 @@ always @(*) begin
 				state_next = decoded_store;
 			end
 		  
-        `addr_sum: begin
+		  `load_depls: begin
+				cp_oe = 1;
+				t1_we = 1;
+				state_next = `load_depls + 1;
+		  end
+		  
+		  `load_depls + 'd1: begin
+				t1_oe = 1;
+            t2_oe = 0;
+            alu_carry = 1;
+            alu_opcode = `ADC;
+				alu_oe = 1;
+				cp_we = 1;
+				
+				state_next = rm[0] ? `addr_reg : `addr_sum;
+		  end
+		  
+		  `addr_reg: begin
+            regs_addr = rm;
+            regs_oe = 1;
+            if(decoded_d)
+                t2_we = 1;
+            else
+                t1_we = 1;
+					 
+            if(mod == 2'b10)
+					state_next = `add_depls;
+				else
+					if(cop[2] == 1)
+						state_next = `load_instant;
+					else
+						state_next = decoded_src;
+        end
+        
+		  `addr_sum: begin
             regs_addr = rm[1] ? `BB : `BA;
             regs_oe = 1;
             t1_we = 1;
@@ -401,76 +435,6 @@ always @(*) begin
 						state_next = decoded_src;
         end
         
-        `addr_reg: begin
-            regs_addr = rm;
-            regs_oe = 1;
-            if(decoded_d)
-                t2_we = 1;
-            else
-                t1_we = 1;
-					 
-            if(mod == 2'b10)
-					state_next = `add_depls;
-				else
-					if(cop[2] == 1)
-						state_next = `load_instant;
-					else
-						state_next = decoded_src;
-        end
-        
-		  
-		  `load_depls: begin
-				cp_oe = 1;
-				t1_we = 1;
-				state_next = `load_depls + 1;
-		  end
-		  
-		  `load_depls + 'd1: begin
-				t1_oe = 1;
-            t2_oe = 0;
-            alu_carry = 1;
-            alu_opcode = `ADC;
-				alu_oe = 1;
-				cp_we = 1;
-				
-				state_next = rm[0] ? `addr_reg : `addr_sum;
-		  end
-		  `load_instant: begin
-				cp_oe = 1;
-				t2_we = 1;
-				state_next = `load_instant + 1;
-		  end
-		  
-		  `load_instant + 'd1: begin
-				t1_oe = 0;
-				t2_oe = 1;
-				alu_carry = 1;
-            alu_opcode = `ADC;
-				alu_oe = 1;
-				cp_we = 1;
-				state_next = `load_instant + 2;
-		  end
-		  
-		  `load_instant + 'd2: begin
-				cp_oe = 1;
-				am_we = 1;
-				state_next = `load_instant + 3;
-		  end
-		  
-		  `load_instant + 'd3: begin
-				am_oe = 1;
-				state_next = `load_instant + 4;
-		  end
-		  
-		  `load_instant + 'd4: begin
-				ram_oe = 1;
-				if(decoded_d)
-                t1_we = 1;
-            else
-                t2_we = 1;
-				state_next = decoded_dst;
-		  end
-		  
 		  `add_depls: begin
 				cp_oe = 1;
             am_we = 1;
@@ -507,6 +471,44 @@ always @(*) begin
 				else	
 					state_next = decoded_src;
 		  end
+		  
+		 
+		  `load_instant: begin
+				cp_oe = 1;
+				t2_we = 1;
+				state_next = `load_instant + 1;
+		  end
+		  
+		  `load_instant + 'd1: begin
+				t1_oe = 0;
+				t2_oe = 1;
+				alu_carry = 1;
+            alu_opcode = `ADC;
+				alu_oe = 1;
+				cp_we = 1;
+				state_next = `load_instant + 2;
+		  end
+		  
+		  `load_instant + 'd2: begin
+				cp_oe = 1;
+				am_we = 1;
+				state_next = `load_instant + 3;
+		  end
+		  
+		  `load_instant + 'd3: begin
+				am_oe = 1;
+				state_next = `load_instant + 4;
+		  end
+		  
+		  `load_instant + 'd4: begin
+				ram_oe = 1;
+				if(decoded_d)
+                t1_we = 1;
+            else
+                t2_we = 1;
+				state_next = decoded_dst;
+		  end
+		  
 		  
         `load_src_reg: begin
             regs_addr = decoded_d ? rm : rg;
@@ -618,10 +620,10 @@ always @(*) begin
 							t1_oe = 1;
 							alu_opcode = `OR;
 							cp_we = 1;
+							
 						end
 					endcase
-					ind_sel = 1;
-					ind_we = 1;
+					
 				end
             alu_oe = 1;
             t1_we = 1;
