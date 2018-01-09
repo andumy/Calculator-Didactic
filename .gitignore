@@ -47,5 +47,3 @@ Temporary Items
 .apdisk
 *.sdb
 *.didat
-build/
-run/
