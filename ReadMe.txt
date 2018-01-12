@@ -56,10 +56,72 @@ Functionalitati adaugate:
 
 
 -RI[2] = 1 sau adresare imediata
-	
+		
+	Pentru adresarea imediata, instructiunea va mai avea un cuvant, si anume operandul. Pentru toate modurile de adresare,
+	citirea operandului imediat se va face in locul starii decode_src. Pentru modul 11 exista conditia de operand imediat
+	in decodificare modului din starea decode, pentru 10 conditia se afla in starile addr_sum/addr_reg, iar pentru modul 00 
+	conditia se afla in add_depls.
 
-	
+	Conditiile anterioare schimba flow-ul executiei din decoded_src in sterea load_instant care incrementeaza cp-ul, si 
+	plaseaza pe un registru t, in functie de d, valoarea din ram aflata la adresa cp-ului incrementat. Dupa aceea flow-ul 
+	revine la normal cu starea de decoded_dst. in starile de load_dst_mem/reg
 
-Git: https://github.com/andumy/Calculator-Didactic
+
+-JMP
+
+	In starea decode pe ramura care executa si mov, s-au modificat decode_src_next si store. in functie de mod se calculeaza 
+	saltul care in starea de exec suprascrie valoarea din cp. Foarte important faptul ca decoded_store va fi starea fetch si
+	nu se va incrementa cp-ul. Daca se incrementeaza cp-ul practic vom pierde saltul.
+
+-PUSH
+	Cum este mentionat si in curs, workflow-ul normal pentru functia PUSH este sa se decrementeze IS dupa care sa se salveze
+	in ram la noua adresa IS valoarea stocata in src.
+
+	Pentru functiile push si pop s-a facut o noua ramificare in starea decode, pe cazul cop[3] == 0 dupa cop[5]
+	(separa push,pop de mov/jmp). Pentru ca este vorba doar de un sg operator, decoded_src va fi egal cu decoded_dst, pentru
+ 	a incarca direct valoarea din instructiune. Dupa starile de load_dst_mem/reg daca suntem intr-o instructiune de push,
+	trecem in starea de push care decrementeaza IS-ul, se suprascrie IS-ul cu noua valoare, se acceseaza in ram noua adresa
+	si se salveaza valoarea din t1, dupa care se incrementeaza cp-ul si se merge mai departe.
+
+	~~~~~~KNOWN BUG~~~~~~~
+	
+	Pentru modul de adresare 00 daca lista de instructiuni pop/push incepe cu o instructiune de tip push, testerul va da eroare,
+	daca se va incepe cu o instructiune de tip pop atunci toate testele vor reusi.(Ca sa verifici, in test.asm pe testul push_simple
+	plaseaza linia 27 , cea cu push [XA] pe linia 35, sub pop [BA+XB] iar in test.coe valoarea 2020, sub 8060,) 
+	
+	~~~~~~~~~~~~~~~~~~~~~~
+
+-POP 
+	
+	Asemanator functiei PUSH, functia pop mai intai extrage din ram valoarea aflata la adresa IS, incrementeaza valoarea din IS iar 
+	la final valoarea extrasa din ram o salveaza in functie de mod in registrul sau adresa din registrul primit in instructiune.
+
+	Pentru inceput vom decodifica locul in care trebuie salvata valoarea ce va fi extrasa din ram, in functie de mod, dupa care
+	se intra in starea decode_src, adica `pop. Pentru inceput se obtine adresa salvata in IS, se trece in am, iar mai apoi in ram,
+	in paralel se incrementeaza valoarea lui IS, se extrage valoarea din ram si se pune pe t2, mai departe daca modul de adresare 
+	nu este 11, adica valoarea trebuie salvata in ram, se scrie pe am valoarea decodificata anterior din t1, daca nu se trece direct
+	la starea pop+4, unde se transfera valoarea extrasa din memorie pe t1. De aici flow-ul revine la normal cu starea decoded_store.
+
+-JCOND
+	
+	Se creeaza un nou wire(jump_val) care memoreaza cei 4 biti din ri responsabili cu decodificarea saltului. In starea de decode se ignora 
+	modul de adresare si pentru fiecare mod daca se intalneste o instructiune de jcond atunci se va trece direct la starea de exec.
+
+	in starea de exec_1op se face o noua ramificatie dupa cop[0]. Pe ramura cu jcond se ramifica din nou intr-un case dupa wire-ul	jump_val
+	si pe fiecare caz se verifica daca flagurile existente indeplinesc conditia. Daca da se va trece in starea de decoded_jmp, daca nu se 
+	va trece la inc_cp. 
+	In starea de decoded_jmp se stocheaza pe t1 valoarea cp-ului, pe t2 valoarea saltului(ri_oe) se aduna, iar rezultatul se salveaza in cp.
+	De mentionat ca la jmp, ca daca saltul se realizeaza nu se mai intra pe starea inc_cp ci direct pe starea de fetch pentru a nu pierde 
+	valoarea saltului.
+
+	~~~~~~KNOWN BUG~~~~~~~
+
+	Se pare ca uneori functia CMP genereaza flaguri prost, 	iar in exec avand in vedere ca flagurile generate nu corespund, noul cp este eronat.
+	Se observa erorile de tip diverged cp si INDs differ
+
+	~~~~~~~~~~~~~~~~~~~~~~
+
+
+Progresul proiectului se poate urmarii aici - Git: https://github.com/andumy/Calculator-Didactic
 ==========================================================================================
 Andrei Dumitrescu 333 AC

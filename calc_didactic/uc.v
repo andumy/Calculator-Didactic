@@ -113,6 +113,7 @@ wire [0:2]                      rm;
 wire [0:3]							  jump_val;
 
 assign jump_val = {ri[4], ri[5], ri[6], ri[7]};
+
 assign cop  = {ri[0], ri[1], ri[2], ri[3], ri[4], ri[5], ri[6]};
 assign d    = {ri[7]};
 assign mod  = {ri[8], ri[9]};
@@ -251,13 +252,13 @@ always @(*) begin
 							 decoded_exec_next   = `exec_1op;
 							 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
 						end
-						else begin				// conditional jump
-							decoded_exec_next   = `exec_1op;
-							decoded_store_next  = `fetch;
+						else begin
+							 decoded_exec_next   = `exec_1op;
+							 decoded_store_next  = `fetch;
 						end
 					 end
             end
-            else if(cop[1] == 1'b1 ) begin       // two operand instructions 
+            else begin       // two operand instructions 
                 decoded_d_next      = d;
                 decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
                 decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;

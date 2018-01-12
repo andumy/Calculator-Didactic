@@ -13,7 +13,19 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 --------------------------------------------------------------------------------
 instr count: 1, instr addr: 0000, instr: 2304 done in 13 cycles
-	INDs differ: found (P), expected ()
-		at instr count: 1, instr addr: 0000, instr: 2304
+instr count: 2, instr addr: 0002, instr: a304 done in 13 cycles
+instr count: 3, instr addr: 0004, instr: e304 done in 13 cycles
+instr count: 4, instr addr: 0006, instr: 0304 done in 13 cycles
+instr count: 5, instr addr: 0008, instr: a880 done in 12 cycles
+instr count: 6, instr addr: 0009, instr: 3980 done in 18 cycles
+instr count: 7, instr addr: 000b, instr: e110 done in 19 cycles
+	CPs diverged: found 000d, expected 0016
+		at instr count: 7, instr addr: 000b, instr: e110
+	reg 3 differs, found: 0000, expected: ffff
+		at instr count: 7, instr addr: 000b, instr: e110
+	ram addr 00000016 differs, found: 0000, expected: 41a2
+		at instr count: 7, instr addr: 000b, instr: e110
+	ram addr 000003ff differs, found: 0000, expected: 000d
+		at instr count: 7, instr addr: 000b, instr: e110
 --------------------------------------------------------------------------------
-Stopped at time : 20935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 84005 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
