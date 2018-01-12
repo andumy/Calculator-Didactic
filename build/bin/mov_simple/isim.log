@@ -31,19 +31,7 @@ instr count: 16, instr addr: 0011, instr: 670a done in 9 cycles
 instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 9 cycles
 instr count: 19, instr addr: 0014, instr: 8b00 done in 9 cycles
-instr count: 20, instr addr: 0015, instr: 9b00 done in 9 cycles
-instr count: 21, instr addr: 0016, instr: cb80 done in 9 cycles
-instr count: 22, instr addr: 0017, instr: 0300 done in 9 cycles
-instr count: 23, instr addr: 0018, instr: c300 done in 9 cycles
-instr count: 24, instr addr: 0019, instr: cb80 done in 9 cycles
-instr count: 25, instr addr: 001a, instr: 3880 done in 12 cycles
-instr count: 26, instr addr: 001b, instr: a880 done in 12 cycles
-instr count: 27, instr addr: 001c, instr: 1080 done in 14 cycles
-instr count: 28, instr addr: 001d, instr: c080 done in 14 cycles
-instr count: 29, instr addr: 001e, instr: 2000 done in 13 cycles
-instr count: 30, instr addr: 001f, instr: b000 done in 13 cycles
-instr count: 31, instr addr: 0020, instr: 4800 done in 15 cycles
-instr count: 32, instr addr: 0021, instr: 9800 done in 15 cycles
-test ok
+	INDs differ: found (), expected (S)
+		at instr count: 19, instr addr: 0014, instr: 8b00
 --------------------------------------------------------------------------------
-Stopped at time : 345975 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 209625 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

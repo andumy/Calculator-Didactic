@@ -32,13 +32,13 @@ instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 19 cycles
 instr count: 19, instr addr: 0015, instr: 2358 done in 9 cycles
 instr count: 20, instr addr: 0016, instr: 4b22 done in 8 cycles
-instr count: 21, instr addr: 0017, instr: 4019 done in 17 cycles
-instr count: 22, instr addr: 0018, instr: 4009 done in 17 cycles
-	CPs diverged: found 0019, expected 001a
-		at instr count: 22, instr addr: 0018, instr: 4009
-	INDs differ: found (), expected (PZ)
-		at instr count: 22, instr addr: 0018, instr: 4009
-	ram addr 000003f9 differs, found: 0001, expected: 0000
-		at instr count: 22, instr addr: 0018, instr: 4009
+instr count: 21, instr addr: 0017, instr: 4019 done in 11 cycles
+instr count: 22, instr addr: 0018, instr: 4009 done in 7 cycles
+instr count: 23, instr addr: 001a, instr: 5322 done in 8 cycles
+instr count: 24, instr addr: 001b, instr: 4099 done in 12 cycles
+	CPs diverged: found 001d, expected 001c
+		at instr count: 24, instr addr: 001b, instr: 4099
+	INDs differ: found (), expected (PSC)
+		at instr count: 24, instr addr: 001b, instr: 4099
 --------------------------------------------------------------------------------
-Stopped at time : 241265 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 262065 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

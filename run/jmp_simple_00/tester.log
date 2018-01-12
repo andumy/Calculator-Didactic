@@ -35,11 +35,7 @@ instr count: 22, instr addr: 0018, instr: 2050 done in 5 cycles
 instr count: 23, instr addr: 001a, instr: a050 done in 5 cycles
 instr count: 24, instr addr: 0019, instr: 0050 done in 7 cycles
 instr count: 25, instr addr: 001c, instr: 8050 done in 7 cycles
-instr count: 26, instr addr: 001b, instr: 4050 done in 7 cycles
-instr count: 27, instr addr: 001d, instr: c050 done in 7 cycles
-instr count: 28, instr addr: 001c, instr: 8050 done in 7 cycles
-instr count: 29, instr addr: 001b, instr: 4050 done in 7 cycles
-instr count: 30, instr addr: 001d, instr: c050 done in 7 cycles
-test ok
+	INDs differ: found (P), expected ()
+		at instr count: 25, instr addr: 001c, instr: 8050
 --------------------------------------------------------------------------------
-Stopped at time : 324885 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 272535 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

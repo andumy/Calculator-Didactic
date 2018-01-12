@@ -26,37 +26,7 @@ instr count: 13, instr addr: 000d, instr: 670a done in 9 cycles
 instr count: 14, instr addr: 000e, instr: 770a done in 9 cycles
 instr count: 15, instr addr: 000f, instr: ef0a done in 19 cycles
 instr count: 16, instr addr: 0011, instr: 2150 done in 11 cycles
-instr count: 17, instr addr: 0013, instr: a150 done in 11 cycles
-instr count: 18, instr addr: 0015, instr: 6150 done in 11 cycles
-instr count: 19, instr addr: 0017, instr: 0150 done in 13 cycles
-instr count: 20, instr addr: 0019, instr: 8150 done in 13 cycles
-instr count: 21, instr addr: 001b, instr: e150 done in 11 cycles
-instr count: 22, instr addr: 001d, instr: 4150 done in 13 cycles
-instr count: 23, instr addr: 001f, instr: c150 done in 13 cycles
-instr count: 24, instr addr: 0021, instr: 2150 done in 11 cycles
-instr count: 25, instr addr: 0025, instr: 6150 done in 11 cycles
-instr count: 26, instr addr: 0023, instr: a150 done in 11 cycles
-instr count: 27, instr addr: 0027, instr: 0150 done in 13 cycles
-instr count: 28, instr addr: 002d, instr: 4150 done in 13 cycles
-instr count: 29, instr addr: 0029, instr: 8150 done in 13 cycles
-instr count: 30, instr addr: 002b, instr: e150 done in 11 cycles
-instr count: 31, instr addr: 002f, instr: c150 done in 13 cycles
-instr count: 32, instr addr: 0011, instr: 2150 done in 11 cycles
-instr count: 33, instr addr: 0013, instr: a150 done in 11 cycles
-instr count: 34, instr addr: 0015, instr: 6150 done in 11 cycles
-instr count: 35, instr addr: 0017, instr: 0150 done in 13 cycles
-instr count: 36, instr addr: 0019, instr: 8150 done in 13 cycles
-instr count: 37, instr addr: 001b, instr: e150 done in 11 cycles
-instr count: 38, instr addr: 001d, instr: 4150 done in 13 cycles
-instr count: 39, instr addr: 001f, instr: c150 done in 13 cycles
-instr count: 40, instr addr: 0021, instr: 2150 done in 11 cycles
-instr count: 41, instr addr: 0025, instr: 6150 done in 11 cycles
-instr count: 42, instr addr: 0023, instr: a150 done in 11 cycles
-instr count: 43, instr addr: 0027, instr: 0150 done in 13 cycles
-instr count: 44, instr addr: 002d, instr: 4150 done in 13 cycles
-instr count: 45, instr addr: 0029, instr: 8150 done in 13 cycles
-instr count: 46, instr addr: 002b, instr: e150 done in 11 cycles
-instr count: 47, instr addr: 002f, instr: c150 done in 13 cycles
-test ok
+	INDs differ: found (), expected (P)
+		at instr count: 16, instr addr: 0011, instr: 2150
 --------------------------------------------------------------------------------
-Stopped at time : 504065 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 178245 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

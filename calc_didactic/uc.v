@@ -110,7 +110,9 @@ wire                            d;
 wire [0:1]                      mod;
 wire [0:2]                      rg;
 wire [0:2]                      rm;
+wire [0:3]							  jump_val;
 
+assign jump_val = {ri[4], ri[5], ri[6], ri[7]};
 assign cop  = {ri[0], ri[1], ri[2], ri[3], ri[4], ri[5], ri[6]};
 assign d    = {ri[7]};
 assign mod  = {ri[8], ri[9]};
@@ -136,6 +138,8 @@ assign rm   = {ri[13], ri[14], ri[15]};
 `define load_instant				  'h110				// load imediate op
 `define push						  'h120				// push
 `define pop    					  'h130				// pop
+`define decoded_jmp				  'h140				// jump_cond
+
 
 reg [state_width-1 : 0] state = `reset, state_next;
 reg [state_width-1 : 0] decoded_src, decoded_src_next;      // stores decoded source operand load state
@@ -236,16 +240,21 @@ always @(*) begin
 							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
 							decoded_exec_next   = `exec_1op;
 							decoded_src_next    = (cop[4:6]== 3'b101 && mod != 2'b11) ? `exec_1op : ((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
-							
 							decoded_store_next  = cop[4:6]== 3'b101 ? `fetch : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
 						end
 					end
-					else begin								// one operand instructions
-					 decoded_d_next      = 0;
-					 decoded_dst_next    = mod == 2'b11 ? `load_dst_reg : `load_dst_mem;
-					 decoded_src_next    = mod == 2'b11 ? `load_src_reg : `load_src_mem;
-					 decoded_exec_next   = `exec_1op;
-					 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
+					else begin	
+						if(cop[0] == 0 ) begin// one operand instructions
+							 decoded_d_next      = 0;
+							 decoded_dst_next    = mod == 2'b11 ? `load_dst_reg : `load_dst_mem;
+							 decoded_src_next    = mod == 2'b11 ? `load_src_reg : `load_src_mem;
+							 decoded_exec_next   = `exec_1op;
+							 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
+						end
+						else begin				// conditional jump
+							decoded_exec_next   = `exec_1op;
+							decoded_store_next  = `fetch;
+						end
 					 end
             end
             else if(cop[1] == 1'b1 ) begin       // two operand instructions 
@@ -259,15 +268,17 @@ always @(*) begin
             // decode address calculation mode
             case(mod)
                 2'b00: begin
-                    state_next = rm[0] ? `addr_reg : `addr_sum;
+                    state_next = cop[0:3] == 4'b1001 ? decoded_exec:( rm[0] ? `addr_reg : `addr_sum);
                 end
                 
                 2'b11: begin
-                    state_next = cop[2] == 1 ? `load_instant : decoded_src_next;
+                    state_next = cop[0:3] == 4'b1001 ? decoded_exec :(cop[2] == 1 ? `load_instant : decoded_src_next);
+
                 end
 					 
 					 2'b10: begin
-						  state_next = `load_depls;
+						  state_next = cop[0:3] == 4'b1001 ? decoded_exec :`load_depls;
+
 					 end
             endcase
         end
@@ -304,12 +315,13 @@ always @(*) begin
 				alu_opcode = `OR;
 				alu_oe = 1;
 				ram_we = 1;
-				state_next = `push+3;
-				
+				state_next = `push + 3;
 		  end
+		  
 		  `push+'d3:begin
 				state_next = `inc_cp;
 		  end
+		  
 		  
 		  `pop:begin
 				regs_addr = `IS;
@@ -580,56 +592,162 @@ always @(*) begin
 				else
 					state_next = decoded_exec;
         end
-		  
+
         `exec_1op: begin
             
-				if(cop[3] == 1) begin// operatii
-					t1_oe = 1;
-					case(cop[4:6])
-						 3'b000: begin                               // INC
-							  alu_carry = 1;
-							  alu_opcode = `ADC;
-						 end
-						 3'b001: begin                               // DEC
-							  alu_carry = 1;
-							  alu_opcode = `SBB1;
-						 end
-						 3'b010: begin                               // NEG
-							  alu_carry = 0;
-							  alu_opcode = `SBB2;
-						 end
-						 3'b011: begin                               // NOT
-							  alu_opcode = `NOT;
-						 end
-						 3'b100: alu_opcode = `SHL;                  // SHL/SAL
-						 3'b101: alu_opcode = `SHR;                  // SHR
-						 3'b110: alu_opcode = `SAR;                  // SAR
-					endcase
-					ind_sel = 1;
-					ind_we = 1;
-				end
 				
-				if(cop[3] == 0) begin // transfer/date de control
-					
-					case(cop[4:6])
-						3'b000: begin												// MOV
-							t2_oe = 1;
-							alu_opcode = `OR;
-						end
-						3'b101:begin												// JMP
+					if(cop[0] == 0) begin // operatii
+						if(cop[3] == 1) begin
 							t1_oe = 1;
-							alu_opcode = `OR;
-							cp_we = 1;
-							
+							case(cop[4:6])
+								 3'b000: begin                               // INC
+									  alu_carry = 1;
+									  alu_opcode = `ADC;
+								 end
+								 3'b001: begin                               // DEC
+									  alu_carry = 1;
+									  alu_opcode = `SBB1;
+								 end
+								 3'b010: begin                               // NEG
+									  alu_carry = 0;
+									  alu_opcode = `SBB2;
+								 end
+								 3'b011: begin                               // NOT
+									  alu_opcode = `NOT;
+								 end
+								 3'b100: alu_opcode = `SHL;                  // SHL/SAL
+								 3'b101: alu_opcode = `SHR;                  // SHR
+								 3'b110: alu_opcode = `SAR;                  // SAR
+							endcase
+							ind_sel = 1;
+							ind_we = 1;
 						end
-					endcase
+						else begin
+							case(cop[4:6])
+								3'b000: begin												// MOV
+									t2_oe = 1;
+									alu_opcode = `OR;
+								end
+								3'b101:begin												// JMP
+									t1_oe = 1;
+									alu_opcode = `OR;
+									cp_we = 1;
+									
+								end
+							endcase
+						end
+						alu_oe = 1;
+						t1_we = 1;
+						state_next = decoded_store;
+					end
 					
-				end
-            alu_oe = 1;
-            t1_we = 1;
-            
+					
+					else begin // cond jump
+						case(jump_val)
+						
+							4'b0000: begin									// JBE
+								if( (ind[4] | ind[2]) == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0001: begin									// JB / JC
+								if( ind[4] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0010: begin									// JLE
+								if( ((ind[1]^ind[3]) | ind[2]) == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0011: begin									// JL
+								if( (ind[1]^ind[3]) == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0100: begin									// JE/JZ
+								if( ind[2] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0101: begin									// JO
+								if( ind[3] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0110: begin									// JS
+								if( ind[1] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b0111: begin									// JPE
+								if( ind[0] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1000: begin									// JA
+								if( (ind[4] | ind[2] ) == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1001: begin									// JAE/JNC
+								if( ind[4] == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1010: begin									// JG
+								if( ((ind[1]^ind[3]) | ind[2]) == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1011: begin									// JGE
+								if( (ind[1]^ind[3]) == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1100: begin									// JNE/JNZ
+								if( ind[2] == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1101: begin									// JNO
+								if( ind[3] == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1110: begin									// JNS
+								if( ind[1] == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+							4'b1111: begin									// JPO
+								if( ind[0] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
+						endcase
+					end
+		
+				
 
-            state_next = decoded_store;
+					
+					
         end
         
         `exec_2op: begin
@@ -663,7 +781,32 @@ always @(*) begin
 
             state_next = decoded_store;
         end
-        
+		  
+		  `decoded_jmp:begin
+				cp_oe = 1;
+				t1_we = 1;
+				
+				state_next = `decoded_jmp + 1;
+		  end
+		  
+		  `decoded_jmp + 'd1:begin
+				ri_oe = 1;
+				t2_we = 1;
+				
+				state_next = `decoded_jmp + 2;
+		  end
+		  
+		  `decoded_jmp + 'd2:begin
+				t1_oe = 1;
+				t2_oe = 1;
+				alu_opcode = `ADC;
+				alu_carry = 0;
+				alu_oe = 1;
+				
+				cp_we = 1;
+				state_next = `fetch;
+		  end
+		  
         `store_reg: begin
             t1_oe = 1;
             t2_oe = 0;
