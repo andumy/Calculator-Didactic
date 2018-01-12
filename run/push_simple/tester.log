@@ -30,8 +30,14 @@ instr count: 17, instr addr: 0012, instr: 6320 done in 10 cycles
 instr count: 18, instr addr: 0013, instr: 4360 done in 11 cycles
 instr count: 19, instr addr: 0014, instr: e320 done in 10 cycles
 instr count: 20, instr addr: 0015, instr: 8360 done in 23 cycles
-instr count: 21, instr addr: 0017, instr: 2020 done in 11 cycles
-	ram addr 000003ff differs, found: ffff, expected: fffe
-		at instr count: 21, instr addr: 0017, instr: 2020
+instr count: 21, instr addr: 0017, instr: 2020 done in 13 cycles
+instr count: 22, instr addr: 0018, instr: e060 done in 13 cycles
+instr count: 23, instr addr: 0019, instr: a020 done in 13 cycles
+instr count: 24, instr addr: 001a, instr: 6020 done in 13 cycles
+instr count: 25, instr addr: 001b, instr: 4060 done in 15 cycles
+instr count: 26, instr addr: 001c, instr: c060 done in 15 cycles
+instr count: 27, instr addr: 001d, instr: 0020 done in 15 cycles
+instr count: 28, instr addr: 001e, instr: 8060 done in 15 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 230935 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 304585 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

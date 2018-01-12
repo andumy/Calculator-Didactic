@@ -32,13 +32,53 @@ instr count: 17, instr addr: 0012, instr: 770a done in 9 cycles
 instr count: 18, instr addr: 0013, instr: ef0a done in 19 cycles
 instr count: 19, instr addr: 0015, instr: 2358 done in 9 cycles
 instr count: 20, instr addr: 0016, instr: 4b22 done in 8 cycles
-instr count: 21, instr addr: 0017, instr: 4019 done in 11 cycles
-instr count: 22, instr addr: 0018, instr: 4009 done in 7 cycles
+instr count: 21, instr addr: 0017, instr: 4019 done in 9 cycles
+instr count: 22, instr addr: 0018, instr: 4009 done in 10 cycles
 instr count: 23, instr addr: 001a, instr: 5322 done in 8 cycles
-instr count: 24, instr addr: 001b, instr: 4099 done in 12 cycles
-	CPs diverged: found 001d, expected 001c
-		at instr count: 24, instr addr: 001b, instr: 4099
-	INDs differ: found (), expected (PSC)
-		at instr count: 24, instr addr: 001b, instr: 4099
+instr count: 24, instr addr: 001b, instr: 4099 done in 9 cycles
+instr count: 25, instr addr: 001c, instr: 4089 done in 10 cycles
+instr count: 26, instr addr: 001e, instr: 6f22 done in 8 cycles
+instr count: 27, instr addr: 001f, instr: 4059 done in 9 cycles
+instr count: 28, instr addr: 0020, instr: 4049 done in 10 cycles
+instr count: 29, instr addr: 0022, instr: 7722 done in 8 cycles
+instr count: 30, instr addr: 0023, instr: 40d9 done in 9 cycles
+instr count: 31, instr addr: 0024, instr: 40c9 done in 10 cycles
+instr count: 32, instr addr: 0026, instr: 4b22 done in 8 cycles
+instr count: 33, instr addr: 0027, instr: 4039 done in 9 cycles
+instr count: 34, instr addr: 0028, instr: 4029 done in 10 cycles
+instr count: 35, instr addr: 002a, instr: 270a done in 9 cycles
+instr count: 36, instr addr: 002b, instr: 40b9 done in 9 cycles
+instr count: 37, instr addr: 002c, instr: 40a9 done in 10 cycles
+instr count: 38, instr addr: 002e, instr: b712 done in 8 cycles
+instr count: 39, instr addr: 002f, instr: 4079 done in 9 cycles
+instr count: 40, instr addr: 0030, instr: 4069 done in 10 cycles
+instr count: 41, instr addr: 0032, instr: 0312 done in 8 cycles
+instr count: 42, instr addr: 0033, instr: 40f9 done in 9 cycles
+instr count: 43, instr addr: 0034, instr: 40e9 done in 10 cycles
+instr count: 44, instr addr: 0036, instr: 8b22 done in 8 cycles
+instr count: 45, instr addr: 0037, instr: 4009 done in 9 cycles
+instr count: 46, instr addr: 0038, instr: 4019 done in 10 cycles
+instr count: 47, instr addr: 003a, instr: 4b22 done in 8 cycles
+instr count: 48, instr addr: 003b, instr: 4089 done in 9 cycles
+instr count: 49, instr addr: 003c, instr: 4099 done in 10 cycles
+instr count: 50, instr addr: 003e, instr: af22 done in 8 cycles
+instr count: 51, instr addr: 003f, instr: 4049 done in 9 cycles
+instr count: 52, instr addr: 0040, instr: 4059 done in 10 cycles
+instr count: 53, instr addr: 0042, instr: 6f22 done in 8 cycles
+instr count: 54, instr addr: 0043, instr: 40c9 done in 9 cycles
+instr count: 55, instr addr: 0044, instr: 40d9 done in 10 cycles
+instr count: 56, instr addr: 0046, instr: 5322 done in 8 cycles
+instr count: 57, instr addr: 0047, instr: 4029 done in 9 cycles
+instr count: 58, instr addr: 0048, instr: 4039 done in 10 cycles
+instr count: 59, instr addr: 004a, instr: 270a done in 9 cycles
+instr count: 60, instr addr: 004b, instr: 40a9 done in 9 cycles
+instr count: 61, instr addr: 004c, instr: 40b9 done in 10 cycles
+instr count: 62, instr addr: 004e, instr: 4b12 done in 8 cycles
+instr count: 63, instr addr: 004f, instr: 4069 done in 9 cycles
+instr count: 64, instr addr: 0050, instr: 4079 done in 10 cycles
+instr count: 65, instr addr: 0052, instr: 9312 done in 8 cycles
+instr count: 66, instr addr: 0053, instr: 40e9 done in 9 cycles
+instr count: 67, instr addr: 0054, instr: 40f9 done in 10 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 262065 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 711515 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

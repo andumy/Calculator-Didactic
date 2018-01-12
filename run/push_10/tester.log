@@ -23,7 +23,7 @@ instr count: 10, instr addr: 0009, instr: a348 done in 19 cycles
 instr count: 11, instr addr: 000b, instr: 670a done in 9 cycles
 instr count: 12, instr addr: 000c, instr: 770a done in 9 cycles
 instr count: 13, instr addr: 000d, instr: ef0a done in 19 cycles
-instr count: 14, instr addr: 000f, instr: 2120 done in 17 cycles
+instr count: 14, instr addr: 000f, instr: 2120 done in 19 cycles
 instr count: 15, instr addr: 0011, instr: e160 done in 19 cycles
 instr count: 16, instr addr: 0013, instr: a120 done in 19 cycles
 instr count: 17, instr addr: 0015, instr: 6120 done in 19 cycles

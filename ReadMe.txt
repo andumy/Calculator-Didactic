@@ -83,14 +83,6 @@ Functionalitati adaugate:
 	trecem in starea de push care decrementeaza IS-ul, se suprascrie IS-ul cu noua valoare, se acceseaza in ram noua adresa
 	si se salveaza valoarea din t1, dupa care se incrementeaza cp-ul si se merge mai departe.
 
-	~~~~~~KNOWN BUG~~~~~~~
-	
-	Pentru modul de adresare 00 daca lista de instructiuni pop/push incepe cu o instructiune de tip push, testerul va da eroare,
-	daca se va incepe cu o instructiune de tip pop atunci toate testele vor reusi.(Ca sa verifici, in test.asm pe testul push_simple
-	plaseaza linia 27 , cea cu push [XA] pe linia 35, sub pop [BA+XB] iar in test.coe valoarea 2020, sub 8060,) 
-	
-	~~~~~~~~~~~~~~~~~~~~~~
-
 -POP 
 	
 	Asemanator functiei PUSH, functia pop mai intai extrage din ram valoarea aflata la adresa IS, incrementeaza valoarea din IS iar 
@@ -114,12 +106,16 @@ Functionalitati adaugate:
 	De mentionat ca la jmp, ca daca saltul se realizeaza nu se mai intra pe starea inc_cp ci direct pe starea de fetch pentru a nu pierde 
 	valoarea saltului.
 
-	~~~~~~KNOWN BUG~~~~~~~
 
-	Se pare ca uneori functia CMP genereaza flaguri prost, 	iar in exec avand in vedere ca flagurile generate nu corespund, noul cp este eronat.
-	Se observa erorile de tip diverged cp si INDs differ
+-POPF	
+	Asemanator functiei pop, se generaza o serie de stari popf in care se extrage valoarea stocata in RAM la adresa IS, se suprascriu indicii 
+	cu valoarea extrasa si se incrementeaza IS-ul
 
-	~~~~~~~~~~~~~~~~~~~~~~
+-PUSHF
+	Asemanator functiei push, se genereaza o serie de stari in care se decrementeaza IS-ul si se scriu in RAM indicii scrisi pe magistrala 
+	cu ind_oe = 1; Pentru eficientizare s-a folosit la comun starea push+3 in care se asteapta scrierea in RAM a valorilor.
+
+
 
 
 Progresul proiectului se poate urmarii aici - Git: https://github.com/andumy/Calculator-Didactic

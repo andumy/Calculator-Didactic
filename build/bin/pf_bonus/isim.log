@@ -22,8 +22,22 @@ instr count: 7, instr addr: 000b, instr: 6304 done in 13 cycles
 instr count: 8, instr addr: 000d, instr: e304 done in 13 cycles
 instr count: 9, instr addr: 000f, instr: 0104 done in 77 cycles
 instr count: 10, instr addr: 0018, instr: 0148 done in 23 cycles
-instr count: 11, instr addr: 001a, instr: 0021
-	timeout after 1000 cycles
-		at instr count: 11, instr addr: 001a, instr: 0021
+instr count: 11, instr addr: 001a, instr: 0021 done in 15 cycles
+instr count: 12, instr addr: 001b, instr: 112a done in 21 cycles
+instr count: 13, instr addr: 001d, instr: 0021 done in 15 cycles
+instr count: 14, instr addr: 001e, instr: 010e done in 25 cycles
+instr count: 15, instr addr: 0021, instr: 0021 done in 15 cycles
+instr count: 16, instr addr: 0022, instr: c326 done in 12 cycles
+instr count: 17, instr addr: 0024, instr: 0039 done in 9 cycles
+instr count: 18, instr addr: 0025, instr: 0120 done in 21 cycles
+instr count: 19, instr addr: 0027, instr: 033a done in 9 cycles
+instr count: 20, instr addr: 0028, instr: 0061 done in 11 cycles
+instr count: 21, instr addr: 0029, instr: 0079 done in 9 cycles
+instr count: 22, instr addr: 002a, instr: 0039 done in 9 cycles
+instr count: 23, instr addr: 002b, instr: 033a done in 9 cycles
+instr count: 24, instr addr: 002c, instr: 0160 done in 21 cycles
+instr count: 25, instr addr: 002e, instr: 033a done in 9 cycles
+instr count: 26, instr addr: 002f, instr: 0061 done in 11 cycles
+test ok
 --------------------------------------------------------------------------------
-Stopped at time : 126115 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365
+Stopped at time : 284075 ns : File "E:/Facultate/An3/Sem 1/AC/Tema3/tema/build/bin/tester/tester.v" Line 365

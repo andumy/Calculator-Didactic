@@ -140,7 +140,8 @@ assign rm   = {ri[13], ri[14], ri[15]};
 `define push						  'h120				// push
 `define pop    					  'h130				// pop
 `define decoded_jmp				  'h140				// jump_cond
-
+`define pushf						  'h150				// pushf
+`define popf						  'h160				// popf
 
 reg [state_width-1 : 0] state = `reset, state_next;
 reg [state_width-1 : 0] decoded_src, decoded_src_next;      // stores decoded source operand load state
@@ -228,61 +229,175 @@ always @(*) begin
         `decode: begin
             // decode location of operands and operation
 				
-            if(cop[1] == 1'b0) begin           
-					if(cop[3] == 0) begin				// transfer data
-						if(cop[5] == 1)begin				//push/pop
-							decoded_d_next      = d;
-							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-							decoded_src_next    = (cop[0:6] == 6'b0000011 && mod != 2'b11) ? `pop : decoded_dst;
-							decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+				if(cop[1] == 0)begin		// 1 op
+					if(cop[3] == 0) begin	//transfer 
+						if(cop[0] == 0) begin	//cu adresa efectiva
+							if(cop[2] == 0) begin	// fara operand imediat
+								
+								if(cop[5] == 1)begin				//push/pop
+									decoded_d_next      = d;
+									decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+									decoded_exec_next   = `exec_1op;
+									decoded_src_next    = (cop[0:6] == 7'b0000011 && mod != 2'b11) ? `pop : ((mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem);
+									decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+								end
+								
+								else begin							//mov/jmp
+									decoded_d_next      = d;
+									decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+									decoded_exec_next   = `exec_1op;
+									decoded_src_next    = (cop[4:6]== 3'b101 && mod != 2'b11) ? `exec_1op : ((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
+									decoded_store_next  =  cop[4:6]== 3'b101 ? `fetch : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
+								end
+								
+							end
+							
+							if(cop[2] == 1) begin	// cu operand imediat
+								
+								if(cop[5] == 1)begin				//push/pop
+									decoded_d_next      = d;
+									decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+									decoded_exec_next   = `exec_1op;
+									decoded_src_next    = `load_instant;
+									decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+								end
+								
+								else begin							//mov/jmp
+									decoded_d_next      = d;
+									decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+									decoded_exec_next   = `exec_1op;
+									decoded_src_next    = `load_instant;
+									decoded_store_next  =  cop[4:6]== 3'b101 ? `fetch : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
+								end
+								
+							end
 						end
-						else begin							//mov/jmp
-							decoded_d_next      = d;
-							decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-							decoded_exec_next   = `exec_1op;
-							decoded_src_next    = (cop[4:6]== 3'b101 && mod != 2'b11) ? `exec_1op : ((mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem);
-							decoded_store_next  = cop[4:6]== 3'b101 ? `fetch : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
+						if(cop[0] == 1) begin	//fara o adresa efectiva
+									decoded_d_next      = d;
+									decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+									decoded_exec_next   = `exec_1op;
+									decoded_src_next    = (cop[0:6] == 7'b1000011 && mod != 2'b11) ? `popf : ((mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem);
+									decoded_store_next  = `inc_cp;
 						end
 					end
-					else begin	
-						if(cop[0] == 0 ) begin// one operand instructions
-							 decoded_d_next      = 0;
-							 decoded_dst_next    = mod == 2'b11 ? `load_dst_reg : `load_dst_mem;
-							 decoded_src_next    = mod == 2'b11 ? `load_src_reg : `load_src_mem;
-							 decoded_exec_next   = `exec_1op;
-							 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem;
+					if(cop[3] == 1) begin	//operatii
+						if(cop[0] == 0) begin	//cu adresa efectiva
+							if(cop[2] == 0) begin	// fara operand imediat
+								
+								 decoded_d_next      = 0;
+								 decoded_dst_next    = mod == 2'b11 ? `load_dst_reg : `load_dst_mem;
+								 decoded_src_next    = mod == 2'b11 ? `load_src_reg : `load_src_mem;
+								 decoded_exec_next   = `exec_1op;
+								 decoded_store_next  = mod == 2'b11 ? `store_reg : `store_mem; 
+								
+							end
 						end
-						else begin
-							 decoded_exec_next   = `exec_1op;
-							 decoded_store_next  = `fetch;
+						if(cop[0] == 1) begin	//fara adresa efectiva
+							if(cop[2] == 0) begin	// fara operand imediat
+								
+								decoded_src_next	  = `exec_1op;
+								
+							end
 						end
-					 end
-            end
-            else begin       // two operand instructions 
-                decoded_d_next      = d;
-                decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
-                decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
-                decoded_exec_next   = `exec_2op;
-                decoded_store_next  = !cop[3] ? `inc_cp : ((mod == 2'b11) || (d == 1) ? `store_reg : `store_mem);
-            end
-            
+					end
+				end
+				
+				if(cop[1] == 1)begin		// 2 op
+					if(cop[3] == 0) begin	// nu salveaza rezultatul
+						if(cop[0] == 0) begin	//cu adresa efectiva
+							if(cop[2] == 0) begin	// fara operand imediat
+								
+								decoded_d_next      = d;
+								decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;
+								decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
+								decoded_exec_next   = `exec_2op;
+								decoded_store_next  = `inc_cp ; 
+								
+							end
+							if(cop[2] == 1) begin	// cu operand imediat
+								
+								decoded_d_next      = d;
+								decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem; 
+								decoded_src_next    = `load_instant;
+								decoded_exec_next   = `exec_2op;
+								decoded_store_next  = `inc_cp ;
+								
+							end
+						end
+					end
+					if(cop[3] == 1) begin	// salveaza rezultatul
+						if(cop[0] == 0) begin	//cu adresa efectiva
+							if(cop[2] == 0) begin	// fara operand imediat
+								
+								decoded_d_next      = d;
+								decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem;	 
+								decoded_src_next    = (mod == 2'b11) || (d == 0) ? `load_src_reg : `load_src_mem;
+								decoded_exec_next   = `exec_2op;
+								decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;	 
+								
+							end
+							if(cop[2] == 1) begin	// cu operand imediat
+								
+								decoded_d_next      = d;
+								decoded_dst_next    = (mod == 2'b11) || (d == 1) ? `load_dst_reg : `load_dst_mem; 
+								decoded_src_next    = `load_instant;
+								decoded_exec_next   = `exec_2op;
+								decoded_store_next  = (mod == 2'b11) || (d == 1) ? `store_reg : `store_mem;
+								
+							end
+						end
+					end
+				end			
+				
             // decode address calculation mode
-            case(mod)
-                2'b00: begin
-                    state_next = cop[0:3] == 4'b1001 ? decoded_exec:( rm[0] ? `addr_reg : `addr_sum);
-                end
-                
-                2'b11: begin
-                    state_next = cop[0:3] == 4'b1001 ? decoded_exec :(cop[2] == 1 ? `load_instant : decoded_src_next);
+					case(mod)
+						 2'b00: begin
+							  state_next = rm[0] ? `addr_reg : `addr_sum;
+						 end
+						 
+						 2'b11: begin
+							  state_next = decoded_src_next;
 
-                end
-					 
-					 2'b10: begin
-						  state_next = cop[0:3] == 4'b1001 ? decoded_exec :`load_depls;
+						 end
+						 
+						 2'b10: begin
+							  state_next = `load_depls;
 
-					 end
-            endcase
+						 end
+					endcase
         end
+		  
+		  `pushf:begin
+				regs_addr = `IS;
+				regs_oe = 1;
+				t2_we = 1;
+				state_next = `pushf + 1;
+		  end
+		  
+		  `pushf + 'd1:begin
+				t1_oe = 0;
+				t2_oe = 1;
+				alu_opcode = `SBB2;
+				alu_carry = 1;
+				alu_oe = 1;
+				
+				regs_addr = `IS;
+				regs_we = 1;
+				
+				t2_we = 1;
+				
+				am_we = 1;
+				
+				state_next = `pushf + 2;
+		  end
+		  
+		  `pushf +'d2:begin
+				am_oe = 1;
+				
+				ind_oe = 1;
+				ram_we = 1;
+				state_next = `push + 3;
+		  end
 		  
 		  `push:begin
 				regs_addr = `IS;
@@ -323,6 +438,35 @@ always @(*) begin
 				state_next = `inc_cp;
 		  end
 		  
+		  `popf:begin
+				regs_addr = `IS;
+				regs_oe = 1;
+				am_we = 1;
+				
+				t2_we = 1;
+				state_next = `popf +1;
+			end	
+		  
+		  `popf + 'd1:begin
+				t2_oe = 1;
+				alu_opcode = `ADC;
+				alu_carry = 1;
+				alu_oe = 1;
+				
+				regs_addr = `IS;
+				regs_we = 1;
+				
+				am_oe = 1;
+		
+				state_next = `popf+2;
+			end
+		  
+		  `popf+ 'd2:begin
+				ram_oe = 1;
+				ind_we = 1;
+				
+				state_next = decoded_store;
+			end
 		  
 		  `pop:begin
 				regs_addr = `IS;
@@ -558,10 +702,15 @@ always @(*) begin
             regs_addr = decoded_d ? rg : rm;
             regs_oe = 1;
             t1_we = 1;
-				if(cop[0:6] == 6'b0000010)
+				
+				if(cop[0:6] == 2)
 					state_next = `push;
-				else	if(cop[0:6] == 6'b0000011)
+				else	if(cop[0:6] == 3)
 					state_next = `pop;
+				else	if(cop[0:6] == 7'b1000010)
+					state_next = `pushf;
+				else	if(cop[0:6] == 7'b1000011)
+					state_next = `popf;
 				else
 					state_next = decoded_exec;
         end
@@ -586,10 +735,15 @@ always @(*) begin
         `load_dst_mem + 'd2: begin
             ram_oe = 1;
             t1_we = 1;
-				if(cop[0:6] == 6'b0000010)
+				
+				if(cop[0:6] == 2)
 					state_next = `push;
-				else	if(cop[0:6] == 6'b0000011)
+				else	if(cop[0:6] == 3)
 					state_next = `pop;
+				else	if(cop[0:6] == 7'b1000010)
+					state_next = `pushf;
+				else	if(cop[0:6] == 7'b1000011)
+					state_next = `popf;
 				else
 					state_next = decoded_exec;
         end
@@ -643,7 +797,8 @@ always @(*) begin
 					end
 					
 					
-					else begin // cond jump
+					else begin 
+						// cond jump
 						case(jump_val)
 						
 							4'b0000: begin									// JBE
@@ -653,7 +808,7 @@ always @(*) begin
 							end
 							
 							4'b0001: begin									// JB / JC
-								if( ind[4] == 1 )
+								if( ind[3] == 1 )
 									state_next = `decoded_jmp;
 								else state_next = `inc_cp;
 							end
@@ -677,19 +832,19 @@ always @(*) begin
 							end
 							
 							4'b0101: begin									// JO
-								if( ind[3] == 1 )
-									state_next = `decoded_jmp;
-								else state_next = `inc_cp;
-							end
-							
-							4'b0110: begin									// JS
 								if( ind[1] == 1 )
 									state_next = `decoded_jmp;
 								else state_next = `inc_cp;
 							end
 							
+							4'b0110: begin									// JS
+								if( ind[3] == 1 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
 							4'b0111: begin									// JPE
-								if( ind[0] == 1 )
+								if( ind[4] == 1 )
 									state_next = `decoded_jmp;
 								else state_next = `inc_cp;
 							end
@@ -701,7 +856,7 @@ always @(*) begin
 							end
 							
 							4'b1001: begin									// JAE/JNC
-								if( ind[4] == 0 )
+								if( ind[0] == 0 )
 									state_next = `decoded_jmp;
 								else state_next = `inc_cp;
 							end
@@ -725,19 +880,19 @@ always @(*) begin
 							end
 							
 							4'b1101: begin									// JNO
-								if( ind[3] == 0 )
-									state_next = `decoded_jmp;
-								else state_next = `inc_cp;
-							end
-							
-							4'b1110: begin									// JNS
 								if( ind[1] == 0 )
 									state_next = `decoded_jmp;
 								else state_next = `inc_cp;
 							end
 							
+							4'b1110: begin									// JNS
+								if( ind[3] == 0 )
+									state_next = `decoded_jmp;
+								else state_next = `inc_cp;
+							end
+							
 							4'b1111: begin									// JPO
-								if( ind[0] == 1 )
+								if( ind[4] == 0 )
 									state_next = `decoded_jmp;
 								else state_next = `inc_cp;
 							end
